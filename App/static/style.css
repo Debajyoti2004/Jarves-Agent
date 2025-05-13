@@ -1,0 +1,201 @@
+:root {
+    --orb-border-width: 15px;
+    --orb-diameter: 250px;
+
+    --color-idle: #00d0ff;
+    --color-idle-shadow: rgba(0, 208, 255, 0.6);
+
+    --color-deactivated: #ff5252;
+    --color-deactivated-shadow: rgba(255, 82, 82, 0.7);
+
+    --color-active: #448aff;
+    --color-active-shadow: rgba(68, 138, 255, 0.7);
+    
+    --color-speaking-vibe-1: #33ffdd;
+    --color-speaking-vibe-2: #00aaff;
+
+    --color-offline: #ff4081;
+    --color-offline-shadow: rgba(255, 64, 129, 0.7);
+
+    --waveform-bar-color: var(--color-speaking-vibe-1);
+
+    --bg-color: #0f121a;
+    --text-color: #e8eff5;
+    --container-bg: rgba(20, 25, 35, 0.85);
+
+    --status-color-default: #95a5a6;
+    --status-color-online: #64ffda;
+    --status-color-speaking: var(--color-speaking-vibe-1);
+    --status-color-active: var(--color-active);
+    --status-color-processing: #f39c12;
+    --status-color-error: #e74c3c;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--container-bg);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0, 208, 255, 0.1), inset 0 0 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(0, 208, 255, 0.2);
+    width: 90%;
+    max-width: 600px;
+}
+
+#jarvis-visualizer {
+    margin-bottom: 30px;
+    position: relative;
+    height: calc(var(--orb-diameter) + 40px);
+    display: flex;
+    flex-direction: column; /* To stack orb and waveform */
+    justify-content: center;
+    align-items: center;
+}
+
+.orb-wrapper {
+    width: var(--orb-diameter);
+    height: var(--orb-diameter);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Space if waveform is visible */
+}
+
+#jarvis-orb {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: var(--orb-border-width);
+    border-color: var(--color-idle);
+    box-shadow: 0 0 20px var(--color-idle-shadow), 
+                0 0 40px var(--color-idle-shadow),
+                inset 0 0 15px rgba(0,0,0,0.3);
+    transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, transform 0.3s ease;
+    animation: orbIdleBreathing 4s ease-in-out infinite;
+}
+
+@keyframes orbIdleBreathing {
+    0%, 100% { transform: scale(1); filter: brightness(100%); }
+    50% { transform: scale(1.02); filter: brightness(110%); }
+}
+
+#jarvis-orb.offline {
+    border-color: var(--color-offline);
+    box-shadow: 0 0 25px var(--color-offline-shadow), 0 0 50px var(--color-offline-shadow), inset 0 0 15px rgba(0,0,0,0.3);
+    animation: orbIdleBreathing 5s ease-in-out infinite;
+}
+
+#jarvis-orb.deactivated {
+    border-color: var(--color-deactivated);
+    box-shadow: 0 0 25px var(--color-deactivated-shadow), 0 0 50px var(--color-deactivated-shadow), inset 0 0 15px rgba(0,0,0,0.3);
+    animation: orbIdleBreathing 4.5s ease-in-out infinite;
+}
+
+#jarvis-orb.active {
+    border-color: var(--color-active);
+    box-shadow: 0 0 25px var(--color-active-shadow), 0 0 50px var(--color-active-shadow), inset 0 0 15px rgba(0,0,0,0.3);
+    animation: orbActivePulsing 2s ease-in-out infinite;
+}
+
+@keyframes orbActivePulsing {
+    0%, 100% { transform: scale(1); filter: brightness(100%); }
+    50% { transform: scale(1.04); filter: brightness(115%); }
+}
+
+#jarvis-orb.speaking {
+    animation: borderVibration 0.15s linear infinite, 
+               speakingShadowShift 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes borderVibration {
+    0%   { border-width: calc(var(--orb-border-width) - 2px); filter: brightness(110%);}
+    25%  { border-width: calc(var(--orb-border-width) + 2px); filter: brightness(130%); border-color: var(--color-speaking-vibe-1); }
+    50%  { border-width: var(--orb-border-width); filter: brightness(100%);}
+    75%  { border-width: calc(var(--orb-border-width) + 1px); filter: brightness(120%); border-color: var(--color-speaking-vibe-2); }
+    100% { border-width: calc(var(--orb-border-width) - 2px); filter: brightness(110%);}
+}
+
+@keyframes speakingShadowShift {
+    from { box-shadow: 0 0 30px var(--color-speaking-vibe-1), 0 0 60px var(--color-speaking-vibe-1), inset 0 0 20px rgba(0,0,0,0.2); }
+    to   { box-shadow: 0 0 35px var(--color-speaking-vibe-2), 0 0 70px var(--color-speaking-vibe-2), inset 0 0 25px rgba(0,0,0,0.25); }
+}
+
+#jarvis-waveform {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 40px;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 5px; /* Reduced margin slightly */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#jarvis-waveform.speaking {
+    opacity: 0.8;
+}
+
+.waveform-bar {
+    width: 6px;
+    background-color: var(--waveform-bar-color);
+    margin: 0 2px;
+    border-radius: 2px;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    box-shadow: 0 0 3px var(--waveform-bar-color);
+}
+
+@keyframes wave {
+    0%   { transform: scaleY(0.1); }
+    25%  { transform: scaleY(1.0); }
+    50%  { transform: scaleY(0.3); }
+    75%  { transform: scaleY(0.8); }
+    100% { transform: scaleY(0.1); }
+}
+
+#jarvis-text-output {
+    min-height: 50px;
+    padding: 12px 20px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 208, 255, 0.2);
+    margin-top: 10px; /* Adjusted from 30px */
+    margin-bottom: 15px;
+    font-size: 1em;
+    line-height: 1.5;
+    overflow-y: auto;
+    max-height: 150px;
+    box-shadow: inset 0 0 8px rgba(0, 208, 255, 0.1);
+    text-shadow: 0 0 5px rgba(0, 208, 255, 0.3);
+}
+
+#jarvis-text-output p {
+    margin: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#status-indicator {
+    font-size: 0.85em;
+    color: var(--status-color-default);
+    padding: 6px 12px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.25);
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}

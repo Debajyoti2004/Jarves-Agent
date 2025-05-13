@@ -1,0 +1,14 @@
+2025-05-08 13:46:10,794 - INFO - MainThread - jarves - main_test_jarvis - Starting Jarvis application test (async main)...
+2025-05-08 13:46:10,794 - INFO - MainThread - jarves - __init__ - Primary wake word: 'Hey Jarvis'. All triggers: {'hey jarves', 'jarvis', 'hey jarvis'}
+2025-05-08 13:46:10,992 - INFO - MainThread - jarves - _initialize_speaker - SAPI Speaker (SAPI.SpVoice) initialized successfully.
+2025-05-08 13:46:10,992 - INFO - MainThread - jarves - _run_speak_tests_async - Running speak function tests (async via queue).
+2025-05-08 13:46:10,992 - INFO - MainThread - jarves - speech_worker_task - Speech worker started.
+2025-05-08 13:46:52,328 - INFO - MainThread - jarves - _run_speak_tests_async - Speak function tests finished (queued).
+2025-05-08 13:46:55,951 - INFO - MainThread - jarves - run_async - Entering deactivated state, waiting for wake word.
+2025-05-08 13:46:56,354 - INFO - MainThread - jarves - listen_for_wake_word - Listening for wake word...
+2025-05-08 13:46:56,357 - INFO - MainThread - jarves - speech_worker_task - Speech worker started.
+2025-05-08 13:47:32,445 - INFO - MainThread - jarves - run_async - Jarvis main run_async task was cancelled.
+2025-05-08 13:47:32,445 - INFO - MainThread - jarves - run_async - Jarvis application attempting graceful shutdown of speech worker.
+2025-05-08 13:47:32,446 - INFO - MainThread - jarves - speech_worker_task - Speech worker received shutdown signal.
+2025-05-08 13:47:41,537 - INFO - MainThread - jarves - main_test_jarvis - Shutting down main_test_jarvis.
+2025-05-08 13:47:41,538 - INFO - MainThread - jarves - main_test_jarvis - main_test_jarvis finished.

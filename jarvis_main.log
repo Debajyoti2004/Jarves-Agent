@@ -1,0 +1,129 @@
+2025-05-09 20:34:54,347 - INFO - root - Starting Jarvis application...
+2025-05-09 20:34:54,347 - INFO - root - Core dependencies (SpeechRecognition, pywin32, requests) seem present.
+2025-05-09 20:34:54,348 - INFO - root - Initializing Jarvis. Primary: 'Jarvis'. All: {'hey jarves', 'hey jarvis', 'jarvis'}
+2025-05-09 20:34:54,553 - INFO - root - SAPI Speaker initialized successfully.
+2025-05-09 20:34:54,553 - INFO - root - Flask UI notifications will be sent to: http://127.0.0.1:5000
+2025-05-09 20:35:00,561 - INFO - root - Proceeding to Phase 2: Main operational loop (run()).
+2025-05-09 20:35:03,173 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 20:35:03,575 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 20:35:11,827 - INFO - root - Wake word detected in: 'jarvis'
+2025-05-09 20:35:13,819 - INFO - root - Jarvis activated. Entering command loop.
+2025-05-09 20:35:22,571 - INFO - root - Command recognized: 'give me two types of'
+2025-05-09 20:35:22,583 - INFO - __main__ - MockAgent received: give me two types of
+2025-05-09 20:35:39,316 - INFO - root - Command recognized: 'shutdown'
+2025-05-09 20:35:39,320 - INFO - __main__ - MockAgent received: shutdown
+2025-05-09 20:36:02,519 - WARNING - root - Cmd listening timed out.
+2025-05-09 20:36:10,932 - WARNING - root - Could not understand cmd audio.
+2025-05-09 20:36:16,016 - INFO - root - Command recognized: 'shutdown'
+2025-05-09 20:36:16,016 - INFO - __main__ - MockAgent received: shutdown
+2025-05-09 20:36:35,895 - INFO - root - Command recognized: 'exit'
+2025-05-09 20:36:39,603 - INFO - root - Exit command detected.
+2025-05-09 20:36:39,641 - INFO - root - Deactivating command loop based on process_command result.
+2025-05-09 20:36:39,641 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 20:36:39,976 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 20:36:53,382 - INFO - root - Shutdown initiated by KeyboardInterrupt.
+2025-05-09 20:36:58,248 - INFO - root - Jarvis application finished.
+2025-05-09 20:36:58,248 - INFO - root - Jarvis application __main__ block finished.
+2025-05-09 20:59:41,824 - INFO - root - Starting Jarvis application...
+2025-05-09 20:59:41,824 - INFO - root - Core dependencies (SpeechRecognition, pywin32, requests) seem present.
+2025-05-09 20:59:41,824 - INFO - root - Initializing Jarvis. Primary: 'Jarvis'. All: {'jarvis', 'hey jarves', 'hey jarvis'}
+2025-05-09 20:59:42,013 - INFO - root - SAPI Speaker initialized successfully.
+2025-05-09 20:59:42,013 - INFO - root - Flask UI notifications will be sent to: http://127.0.0.1:5000
+2025-05-09 20:59:47,553 - INFO - root - Proceeding to Phase 2: Main operational loop (run()).
+2025-05-09 20:59:50,090 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 20:59:50,471 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:00:16,204 - INFO - root - Wake word detected in: 'hey jarvis'
+2025-05-09 21:00:18,572 - INFO - root - Jarvis activated. Entering command loop.
+2025-05-09 21:00:29,439 - WARNING - root - Could not understand cmd audio.
+2025-05-09 21:00:37,832 - INFO - root - Command recognized: 'exit'
+2025-05-09 21:00:41,401 - INFO - root - Exit command detected.
+2025-05-09 21:00:41,465 - INFO - root - Deactivating command loop based on process_command result.
+2025-05-09 21:00:41,465 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:00:41,788 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:01:14,641 - INFO - root - Shutdown initiated by KeyboardInterrupt.
+2025-05-09 21:01:19,797 - INFO - root - Jarvis application finished.
+2025-05-09 21:01:19,800 - INFO - root - Jarvis application __main__ block finished.
+2025-05-09 21:09:06,649 - INFO - root - Starting Jarvis application...
+2025-05-09 21:09:06,650 - INFO - root - Core dependencies (SpeechRecognition, pywin32, requests) seem present.
+2025-05-09 21:09:06,650 - INFO - root - Initializing Jarvis. Primary: 'Jarvis'. All: {'hey jarves', 'hey jarvis', 'jarvis'}
+2025-05-09 21:09:06,850 - INFO - root - SAPI Speaker initialized successfully.
+2025-05-09 21:09:06,852 - INFO - root - Flask UI notifications will be sent to: http://127.0.0.1:5000
+2025-05-09 21:09:12,556 - INFO - root - Proceeding to Phase 2: Main operational loop (run()).
+2025-05-09 21:09:15,113 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:09:15,513 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:09:20,337 - INFO - root - Wake word detected in: 'hey jarvis'
+2025-05-09 21:09:22,172 - INFO - root - Jarvis activated. Entering command loop.
+2025-05-09 21:09:40,541 - WARNING - root - Could not understand cmd audio.
+2025-05-09 21:09:45,207 - INFO - root - Command recognized: 'exit'
+2025-05-09 21:09:48,845 - INFO - root - Exit command detected.
+2025-05-09 21:09:48,922 - INFO - root - Deactivating command loop based on process_command result.
+2025-05-09 21:09:48,922 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:09:49,249 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:09:51,619 - INFO - root - Shutdown initiated by KeyboardInterrupt.
+2025-05-09 21:09:56,243 - INFO - root - Jarvis application finished.
+2025-05-09 21:09:56,243 - INFO - root - Jarvis application __main__ block finished.
+2025-05-09 21:22:55,435 - INFO - root - Starting Jarvis application...
+2025-05-09 21:22:55,435 - INFO - root - Core dependencies (SpeechRecognition, pywin32, requests) seem present.
+2025-05-09 21:22:55,435 - INFO - root - Initializing Jarvis. Primary: 'Jarvis'. All: {'jarvis', 'hey jarvis', 'hey jarves'}
+2025-05-09 21:22:55,632 - INFO - root - SAPI Speaker initialized successfully.
+2025-05-09 21:22:55,633 - INFO - root - Flask UI notifications will be sent to: http://127.0.0.1:5000
+2025-05-09 21:23:01,131 - INFO - root - Proceeding to Phase 2: Main operational loop (run()).
+2025-05-09 21:23:03,718 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:23:04,082 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:23:19,828 - INFO - root - Wake word detected in: 'hey jarvis'
+2025-05-09 21:23:21,869 - INFO - root - Jarvis activated. Entering command loop.
+2025-05-09 21:23:28,359 - INFO - root - Command recognized: 'exit'
+2025-05-09 21:23:31,953 - INFO - root - Exit command detected.
+2025-05-09 21:23:32,001 - INFO - root - Deactivating command loop based on process_command result.
+2025-05-09 21:23:32,009 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:23:32,351 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:25:44,814 - INFO - root - Shutdown initiated by KeyboardInterrupt.
+2025-05-09 21:25:49,259 - INFO - root - Jarvis application finished.
+2025-05-09 21:25:49,261 - INFO - root - Jarvis application __main__ block finished.
+2025-05-09 21:28:48,150 - INFO - root - Starting Jarvis application...
+2025-05-09 21:28:48,150 - INFO - root - Core dependencies (SpeechRecognition, pywin32, requests) seem present.
+2025-05-09 21:28:48,150 - INFO - root - Initializing Jarvis. Primary: 'Jarvis'. All: {'jarvis', 'hey jarvis', 'hey jarves'}
+2025-05-09 21:28:48,354 - INFO - root - SAPI Speaker initialized successfully.
+2025-05-09 21:28:48,354 - INFO - root - Flask UI notifications will be sent to: http://127.0.0.1:5000
+2025-05-09 21:28:53,899 - INFO - root - Proceeding to Phase 2: Main operational loop (run()).
+2025-05-09 21:28:56,463 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:28:56,923 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:29:05,849 - INFO - root - Wake word detected in: 'hey jarvis'
+2025-05-09 21:29:07,782 - INFO - root - Jarvis activated. Entering command loop.
+2025-05-09 21:29:22,660 - WARNING - root - Cmd listening timed out.
+2025-05-09 21:29:30,059 - INFO - root - Command recognized: 'what's your name'
+2025-05-09 21:29:30,059 - INFO - __main__ - MockAgent received: what's your name
+2025-05-09 21:29:47,924 - INFO - root - Command recognized: 'what's your name'
+2025-05-09 21:29:47,924 - INFO - __main__ - MockAgent received: what's your name
+2025-05-09 21:30:09,008 - INFO - root - Command recognized: 'what's your name'
+2025-05-09 21:30:09,014 - INFO - __main__ - MockAgent received: what's your name
+2025-05-09 21:30:31,973 - WARNING - root - Cmd listening timed out.
+2025-05-09 21:30:40,405 - WARNING - root - Could not understand cmd audio.
+2025-05-09 21:30:45,338 - INFO - root - Command recognized: 'exit exit'
+2025-05-09 21:30:48,885 - INFO - root - Exit command detected.
+2025-05-09 21:30:48,937 - INFO - root - Deactivating command loop based on process_command result.
+2025-05-09 21:30:48,937 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:30:49,269 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:31:19,032 - INFO - root - Shutdown initiated by KeyboardInterrupt.
+2025-05-09 21:31:23,728 - INFO - root - Jarvis application finished.
+2025-05-09 21:31:23,734 - INFO - root - Jarvis application __main__ block finished.
+2025-05-09 21:31:31,309 - INFO - root - Starting Jarvis application...
+2025-05-09 21:31:31,309 - INFO - root - Core dependencies (SpeechRecognition, pywin32, requests) seem present.
+2025-05-09 21:31:31,315 - INFO - root - Initializing Jarvis. Primary: 'Jarvis'. All: {'jarvis', 'hey jarvis', 'hey jarves'}
+2025-05-09 21:31:31,485 - INFO - root - SAPI Speaker initialized successfully.
+2025-05-09 21:31:31,485 - INFO - root - Flask UI notifications will be sent to: http://127.0.0.1:5000
+2025-05-09 21:31:37,092 - INFO - root - Proceeding to Phase 2: Main operational loop (run()).
+2025-05-09 21:31:39,697 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:31:40,030 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:31:51,885 - INFO - root - Wake word detected in: 'hey jarvis'
+2025-05-09 21:31:54,616 - INFO - root - Jarvis activated. Entering command loop.
+2025-05-09 21:32:00,147 - INFO - root - Command recognized: 'can you make a cup of tea'
+2025-05-09 21:32:00,161 - INFO - __main__ - MockAgent received: can you make a cup of tea
+2025-05-09 21:32:13,725 - INFO - root - Command recognized: 'exit'
+2025-05-09 21:32:17,251 - INFO - root - Exit command detected.
+2025-05-09 21:32:17,300 - INFO - root - Deactivating command loop based on process_command result.
+2025-05-09 21:32:17,300 - INFO - root - Entering deactivated state, waiting for wake word.
+2025-05-09 21:32:17,615 - INFO - root - Listening for wake word ('Jarvis' or variations)...
+2025-05-09 21:32:23,711 - INFO - root - Shutdown initiated by KeyboardInterrupt.
+2025-05-09 21:32:28,372 - INFO - root - Jarvis application finished.
+2025-05-09 21:32:28,372 - INFO - root - Jarvis application __main__ block finished.

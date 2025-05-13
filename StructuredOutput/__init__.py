@@ -1,0 +1,5 @@
+from .amazon_product import structure_products_with_cohere
+from .flight_details import structure_flight_list_with_cohere
+from .hotel_details import structure_hotels_with_cohere
+
+__all__ = ["structure_products_with_cohere","structure_hotels_with_cohere","structure_flight_list_with_cohere"]

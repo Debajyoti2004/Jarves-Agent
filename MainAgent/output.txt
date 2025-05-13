@@ -1,0 +1,253 @@
+INFO     [browser_use] BrowserUse logging setup complete with level info
+INFO     [telemetry] Anonymized telemetry enabled. See https://docs.browser-use.com/development/telemetry for more information.
+--- Starting Direct Tool Tests (Sync & Async) ---
+[INFO] TestTool instance created.
+[INFO] --> Running test_open_app (Sync)
+✅ Launching: notepad
+
+--- Testing: open_app_tool ---
+✅ Result:
+'✅ Successfully opened app: notepad'
+--- Finished: open_app_tool ---
+ℹ️ No similar applications found.
+⚠️ Error: Application 'AppThatDoesNotExist12345' not found and no similar matches.
+
+--- Testing: open_app_tool (Failure Case) ---
+✅ Result:
+('⚠️ Could not open app: AppThatDoesNotExist12345. It might not be installed '
+ 'or found.')
+--- Finished: open_app_tool (Failure Case) ---
+[INFO] <-- Finished test_open_app
+[INFO] --> Running test_open_website (Sync)
+💡 Did you mean: google?
+Did you mean 'google'? Opening that for you.
+🌐 Opening 'https://www.google.com' ...
+
+--- Testing: open_website_tool ---
+✅ Result:
+'✅ Website google.com opened successfully'
+--- Finished: open_website_tool ---
+💡 Did you mean: wikipedia?
+Did you mean 'wikipedia'? Opening that for you.
+🌐 Opening 'https://www.wikipedia.org' ...
+
+--- Testing: open_website_tool (Full URL) ---
+✅ Result:
+'✅ Website https://www.wikipedia.org opened successfully'
+--- Finished: open_website_tool (Full URL) ---
+[INFO] <-- Finished test_open_website
+[INFO] --> Running test_amazon_scraper (Async)
+
+Attempting ASYNC LIVE Amazon search for 'wireless earbuds'...
+
+Getting Amazon URL for: 'wireless earbuds' (domain: in, proxy: False)
+Launching local browser...
+Browser initialized.
+Navigating to: https://www.amazon.in/s?k=wireless+earbuds
+Navigation successful. Final URL: https://www.amazon.in/s?k=wireless+earbuds
+Initiating shutdown...
+Shutdown complete.
+C:\Users\Debajyoti\AppData\Local\Programs\Python\Python312\Lib\site-packages\browser_use\agent\service.py:321: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  import pkg_resources
+C:\Users\Debajyoti\AppData\Local\Programs\Python\Python312\Lib\site-packages\pkg_resources\__init__.py:3142: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Raw product data extracted from https://www.amazon.in/s?k=wireless+earbuds is Product Card 1: Sennheiser Momentum True Wireless 4
+This product is priced at ₹17,990, showing a 40% discount from the original price of ₹29,990.  It has a 4.0 out of 5-star rating from 1,329 reviews.  Prime eligibility is indicated. The brand is Sennheiser.  Additional details include a ₹496 coupon and free delivery on Monday, May 12.
+
+Product Card 2: amazon basics TWS in-Ear Earbuds
+The price is ₹549, representing a 78% discount.  The rating is 3.8 out of 5 stars from 271 reviews.  Prime eligibility is shown. The brand is amazon basics.  Additional details include an Amazon Pay cashback offer and free delivery options.
+
+Product Card 3: HP H150 Wireless in Ear Earbuds
+This product costs ₹469, showing an 81% discount.  It has a 2.8 out of 5-star rating from 743 reviews.  Prime eligibility is indicated. The brand is HP.  Free delivery is offered.
+
+Product Card 4: HP H150 True Wireless Earbuds
+Priced at ₹469 (81% off), this product has a 2.8 out of 5-star rating based on 743 reviews.  It shows Prime eligibility. The brand is HP. Free delivery is available.
+
+Product Card 5: OnePlus Nord Buds 2r
+This product is listed at ₹1,599 (30% off). It has a 4.2 out of 5-star rating with 24,626 reviews. Prime eligibility is shown. The brand is OnePlus.  There's a 10% discount on select cards and free delivery between May 8-11.
+An unexpected error occurred during parsing product: 'tool_calls'
+Can not parsed Product detail
+
+--- Testing: amazon_web_scrapper ---
+✅ Result:
+('Product Card 1: Sennheiser Momentum True Wireless 4\n'
+ 'This product is priced at ₹17,990, showing a 40% discount from the original '
+ 'price of ₹29,990.  It has a 4.0 out of 5-star rating from 1,329 reviews.  '
+ 'Prime eligibility is indicated. The brand is Sennheiser.  Additional details '
+ 'include a ₹496 coupon and free delivery on Monday, May 12.\n'
+ '\n'
+ 'Product Card 2: amazon basics TWS in-Ear Earbuds\n'
+ 'The price is ₹549, representing a 78% discount.  The rating is 3.8 out of 5 '
+ 'stars from 271 reviews.  Prime eligibility is shown. The brand is amazon '
+ 'basics.  Additional details include an Amazon Pay cashback offer and free '
+ 'delivery options.\n'
+ '\n'
+ 'Product Card 3: HP H150 Wireless in Ear Earbuds\n'
+ 'This product costs ₹469, showing an 81% discount.  It has a 2.8 out of '
+ '5-star rating from 743 reviews.  Prime eligibility is indicated. The brand '
+ 'is HP.  Free delivery is offered.\n'
+ '\n'
+ 'Product Card 4: HP H150 True Wireless Earbuds\n'
+ 'Priced at ₹469 (81% off), this product has a 2.8 out of 5-star rating based '
+ 'on 743 reviews.  It shows Prime eligibility. The brand is HP. Free delivery '
+ 'is available.\n'
+ '\n'
+ 'Product Card 5: OnePlus Nord Buds 2r\n'
+ 'This product is listed at ₹1,599 (30% off). It has a 4.2 out of 5-star '
+ 'rating with 24,626 reviews. Prime eligibility is shown. The brand is '
+ "OnePlus.  There's a 10% discount on select cards and free delivery between "
+ 'May 8-11.')
+--- Finished: amazon_web_scrapper ---
+[INFO] <-- Finished test_amazon_scraper
+[INFO] --> Running test_hotel_scraper (Async)
+
+Attempting ASYNC LIVE Google Hotel search for 'London, UK'...
+Initializing browser...
+Launching local browser (headless=False)...
+C:\Users\Debajyoti\OneDrive\Desktop\Jarves full agent\WebScrappingAgent\google_travel_scrapper.py:51: RuntimeWarning: coroutine 'BrowserContext.grant_permissions' was never awaited
+  self.context.grant_permissions(['geolocation'], origin=self.page.url if self.page else None)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Browser initialized successfully.
+Navigating to https://www.google.com/travel/hotels...
+Inputting location: London, UK
+Trying location selector: input[placeholder="Search for places, hotels and more"]
+Location input found.
+Pressing Enter for location.
+Opening date picker...
+Trying date trigger selector: input[placeholder="Check-in"]
+Date trigger found.
+Attempting to locate Check-in date element with selector: div[data-iso='2025-07-01']
+Check-in date element found. Attempting to click.
+Successfully selected Check-in date.
+Attempting to locate Check-out date element with selector: div[data-iso='2025-07-05']
+Check-out date element found. Attempting to click.
+Successfully selected Check-out date.
+Confirming dates by clicking 'Done'...
+Trying Done button selector: //button[.//span[text()='Done']]
+'Done' button found.
+Waiting for search results to load...
+Search completed. Final URL: https://www.google.com/travel/search?q=ondon%2C%20UK&qs=CAEgACgAOA1IAA&ved=0CAAQ5JsGahcKEwig0bz3k4-NAxUAAAAAHQAAAAAQfA&ts=CAESCgoCCAMKAggDEAAaWgo8EjgKCC9tLzA0anBsMiQweDI1YTNiMTE0MmM3OTFhOToweGM0ZjhhMDQzMzI4ODI1N2E6BkxvbmRvbhoAEhoSFAoHCOkPEAcYARIHCOkPEAcYBRgEMgIIASoJCgU6A0lOUhoA&ap=MAE
+Successfully generated hotel search URL: https://www.google.com/travel/search?q=ondon%2C%20UK&qs=CAEgACgAOA1IAA&ved=0CAAQ5JsGahcKEwig0bz3k4-NAxUAAAAAHQAAAAAQfA&ts=CAESCgoCCAMKAggDEAAaWgo8EjgKCC9tLzA0anBsMiQweDI1YTNiMTE0MmM3OTFhOToweGM0ZjhhMDQzMzI4ODI1N2E6BkxvbmRvbhoAEhoSFAoHCOkPEAcYARIHCOkPEAcYBRgEMgIIASoJCgU6A0lOUhoA&ap=MAE
+Generated URL: https://www.google.com/travel/search?q=ondon%2C%20UK&qs=CAEgACgAOA1IAA&ved=0CAAQ5JsGahcKEwig0bz3k4-NAxUAAAAAHQAAAAAQfA&ts=CAESCgoCCAMKAggDEAAaWgo8EjgKCC9tLzA0anBsMiQweDI1YTNiMTE0MmM3OTFhOToweGM0ZjhhMDQzMzI4ODI1N2E6BkxvbmRvbhoAEhoSFAoHCOkPEAcYARIHCOkPEAcYBRgEMgIIASoJCgU6A0lOUhoA&ap=MAE
+Attempting to shut down hotel scraper bot.
+Shutting down browser...
+Browser shutdown complete.
+Hotel scraper bot shut down completed.
+Configuring browser_use for Microsoft Edge...
+Found Edge executable at: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+Initializing Edge browser via browser_use...
+Edge browser instance created.
+
+Starting hotel extraction agent (using Edge) for URL: https://www.google.com/travel/search?q=ondon%2C%20UK&qs=CAEgACgAOA1IAA&ved=0CAAQ5JsGahcKEwig0bz3k4-NAxUAAAAAHQAAAAAQfA&ts=CAESCgoCCAMKAggDEAAaWgo8EjgKCC9tLzA0anBsMiQweDI1YTNiMTE0MmM3OTFhOToweGM0ZjhhMDQzMzI4ODI1N2E6BkxvbmRvbhoAEhoSFAoHCOkPEAcYARIHCOkPEAcYBRgEMgIIASoJCgU6A0lOUhoA&ap=MAE
+Hotel extraction agent (using Edge) finished.
+Extracted final hotel data using Edge.
+Attempting to close agent browser (Edge).
+Agent browser (Edge) closed.
+Raw hotel data extracted from https://www.google.com/travel/search?q=ondon%2C%20UK&qs=CAEgACgAOA1IAA&ved=0CAAQ5JsGahcKEwig0bz3k4-NAxUAAAAAHQAAAAAQfA&ts=CAESCgoCCAMKAggDEAAaWgo8EjgKCC9tLzA0anBsMiQweDI1YTNiMTE0MmM3OTFhOToweGM0ZjhhMDQzMzI4ODI1N2E6BkxvbmRvbhoAEhoSFAoHCOkPEAcYARIHCOkPEAcYBRgEMgIIASoJCgU6A0lOUhoA&ap=MAE is Hotel Listing: Novel Centre Point Hotel
+The card shows a price of ₹4,230 per night (a great deal, 33% less than usual).  The rating is 4.1 stars from 294 reviews. Amenities listed include: Breakfast ($), Free Wi-Fi, Free parking, Air conditioning, Bar, Restaurant, Room service, Airport shuttle, and Full-service laundry.
+
+Hotel Listing: InterContinental London - the O2 by IHG
+The price shown is ₹32,558 per night. It has a guest rating of 4.5 stars from 5.4K reviews.  Key amenities listed are 'Hot tub' and 'Spa'.  
+
+Hotel Listing: Hilton London Gatwick Airport
+The price shown is ₹14,150 per night. It has a guest rating of 3.9 stars from 4.8K reviews.  Key amenities listed are 'Pet-friendly' and 'Kid-friendly'.
+
+--- Testing: google_hotel_scrapper ---
+✅ Result:
+[{'amenities': ['Breakfast ($)',
+                'Free Wi-Fi',
+                'Free parking',
+                'Air conditioning',
+                'Bar',
+                'Restaurant',
+                'Room service',
+                'Airport shuttle',
+                'Full-service laundry'],
+  'name': 'Novel Centre Point Hotel',
+  'price': '₹4,230 per night',
+  'rating': '4.1 stars from 294 reviews'},
+ {'amenities': ['Hot tub', 'Spa'],
+  'name': 'InterContinental London - the O2 by IHG',
+  'price': '₹32,558 per night',
+  'rating': '4.5 stars from 5.4K reviews'},
+ {'amenities': ['Pet-friendly', 'Kid-friendly'],
+  'name': 'Hilton London Gatwick Airport',
+  'price': '₹14,150 per night',
+  'rating': '3.9 stars from 4.8K reviews'}]
+--- Finished: google_hotel_scrapper ---
+[INFO] <-- Finished test_hotel_scraper
+[INFO] --> Running test_flight_scraper (Async)
+
+Attempting ASYNC LIVE Google Flight search from 'JFK' to 'LAX'...
+Opening Google Flights...
+Entering origin...
+Enetered origin successfully..
+Entering destination...
+Enter destination successfully...
+Choosing travel dates...
+Generated URL: https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI1LTA3LTE1agwIAhIIL20vMGN2dzlyBwgBEgNMQVgaIxIKMjAyNS0wNy0yMmoHCAESA0xBWHIMCAISCC9tLzBjdnc5QAFIAXABggELCP___________wGYAQE
+Terminating browser instance...
+Browser session ended.
+Browser Shutdown completed
+Configuring browser_use for Microsoft Edge (Flight Info)...
+Found Edge executable at: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+Initializing Edge browser via browser_use (Flight Info)...
+Edge browser instance created (Flight Info).
+
+Starting flight extraction agent (using Edge) for URL: https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI1LTA3LTE1agwIAhIIL20vMGN2dzlyBwgBEgNMQVgaIxIKMjAyNS0wNy0yMmoHCAESA0xBWHIMCAISCC9tLzBjdnc5QAFIAXABggELCP___________wGYAQE
+Flight extraction agent (using Edge) finished.
+Extracted final flight data using Edge.
+Attempting to close agent browser (Edge - Flight Info).
+Agent browser (Edge - Flight Info) closed.
+Extracted flight info from https://www.google.com/travel/flights/search?tfs=CBwQAhojEgoyMDI1LTA3LTE1agwIAhIIL20vMGN2dzlyBwgBEgNMQVgaIxIKMjAyNS0wNy0yMmoHCAESA0xBWHIMCAISCC9tLzBjdnc5QAFIAXABggELCP___________wGYAQE is Flight Option: IndiGo, British Airways - ₹131,499
+The outbound flight departs CCU at 7:30 PM and arrives at LAX at 2:55 PM the next day.  It has 2 stops, in DEL and LHR, and the total duration is 31 hours and 55 minutes. The return flight details are not explicitly shown on this summarized view. The total round trip price is ₹131,499.
+
+Flight Option: Qatar Airways - ₹134,958
+The outbound flight departs CCU at 3:50 AM and arrives at LAX at 2:00 PM on the same day. It has 1 stop in DOH, with a layover duration of 1 hour and 25 minutes. The total duration is 22 hours and 40 minutes. Return flight details are not shown. The total round trip price is ₹134,958.
+
+Flight Option: Emirates - ₹137,387
+The outbound flight departs CCU at 9:45 AM and arrives at LAX at 2:15 PM the next day. It has 1 stop in DXB with a 19-hour and 50-minute layover (overnight). The total duration is 41 hours. Return flight details are not shown. The total round trip price is ₹137,387.
+
+--- Testing: google_flight_scrapper ---
+✅ Result:
+[{'currency': 'INR',
+  'details_url': '',
+  'outbound_flight': {'airline': 'IndiGo, British Airways',
+                      'arrival_datetime': '2:55 PM (next day)',
+                      'departure_datetime': '7:30 PM',
+                      'destination_airport': 'LAX',
+                      'duration': '31 hours and 55 minutes',
+                      'num_stops': 2,
+                      'origin_airport': 'CCU',
+                      'stop_details': ['DEL', 'LHR']},
+  'return_flight': {},
+  'total_price': '₹131,499'},
+ {'currency': 'INR',
+  'details_url': '',
+  'outbound_flight': {'airline': 'Qatar Airways',
+                      'arrival_datetime': '2:00 PM',
+                      'departure_datetime': '3:50 AM',
+                      'destination_airport': 'LAX',
+                      'duration': '22 hours and 40 minutes',
+                      'num_stops': 1,
+                      'origin_airport': 'CCU',
+                      'stop_details': ['DOH (layover: 1 hour 25 minutes)']},
+  'return_flight': {},
+  'total_price': '₹134,958'},
+ {'currency': 'INR',
+  'details_url': '',
+  'outbound_flight': {'airline': 'Emirates',
+                      'arrival_datetime': '2:15 PM (next day)',
+                      'departure_datetime': '9:45 AM',
+                      'destination_airport': 'LAX',
+                      'duration': '41 hours',
+                      'num_stops': 1,
+                      'origin_airport': 'CCU',
+                      'stop_details': ['DXB (layover: 19 hours 50 minutes)']},
+  'return_flight': {},
+  'total_price': '₹137,387'}]
+--- Finished: google_flight_scrapper ---
+[INFO] <-- Finished test_flight_scraper
+
+--- All Direct Tool Tests Completed ---
