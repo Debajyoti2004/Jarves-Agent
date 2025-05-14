@@ -7,7 +7,7 @@ from langchain_core.tools import BaseTool
 from langchain_core.runnables import RunnableConfig
 
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain.agents import AgentExecutor, create_react_agent
+from langchain.agents import create_react_agent
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.tools.render import render_text_description
 
@@ -17,10 +17,9 @@ from .execution_tools import (
     file_read,
     file_write,
     list_files,
-    close_sandbox 
+    close_sandbox
 )
 from .code_prompt_task import AGENT_PROMPT
-from langchain import hub
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -45,7 +44,7 @@ if API_KEY_GOOGLE:
 else:
     logger.error("No GOOGLE_API_KEY found. Cannot initialize LLM.")
 
-tools:List[BaseTool]= [
+tools: List[BaseTool] = [
     executor,
     extract_missing_modules,
     file_read,
@@ -54,7 +53,7 @@ tools:List[BaseTool]= [
     close_sandbox
 ]
 
-custom_langchain_code_agent_executor = None
+custom_langchain_code_agent_runnable = None
 if llm:
     try:
         prompt = ChatPromptTemplate.from_template(AGENT_PROMPT)
@@ -62,23 +61,17 @@ if llm:
             tools=render_text_description(tools),
             tool_names=", ".join([t.name for t in tools]),
         )
-        react_agent_runnable = create_react_agent(llm, tools, prompt_with_tools)
-        custom_langchain_code_agent_executor = AgentExecutor(
-            agent=react_agent_runnable,
-            tools=tools,
-            verbose=True,
-            handle_parsing_errors=True,
-            max_iterations=15 
-        )
-        logger.info("Custom Langchain ReAct Code Agent Executor created successfully.")
+        custom_langchain_code_agent_runnable = create_react_agent(llm, tools, prompt_with_tools)
+        logger.info("Custom Langchain ReAct Code Agent Runnable created successfully.")
     except Exception as e:
         logger.error(f"Failed to create Langchain ReAct agent components: {e}", exc_info=True)
 else:
-    logger.warning("LLM not initialized, Agent Executor cannot be created.")
+    logger.warning("LLM not initialized, Agent cannot be created.")
+
 
 def custom_code_agent(task_input: str, config: Optional[RunnableConfig] = None) -> Tuple[str, Optional[str]]:
-    if not custom_langchain_code_agent_executor:
-        error_msg = "Agent Executor is not initialized."
+    if not custom_langchain_code_agent_runnable:
+        error_msg = "Agent is not initialized."
         logger.error(error_msg)
         return error_msg, None
 
@@ -87,9 +80,9 @@ def custom_code_agent(task_input: str, config: Optional[RunnableConfig] = None) 
     fixed_code: Optional[str] = None
 
     try:
-        response = custom_langchain_code_agent_executor.invoke({"input": task_input}, config=config)
-        final_answer = response.get("output")
-        
+        response = custom_langchain_code_agent_runnable.invoke({"input": task_input}, config=config)
+        final_answer = response.get("output") if isinstance(response, dict) else str(response)
+
         if final_answer:
             logger.info("Agent completed.")
             explanation_marker = "## Explanation:"
@@ -131,4 +124,3 @@ def custom_code_agent(task_input: str, config: Optional[RunnableConfig] = None) 
     except Exception as e:
         logger.error(f"Error running agent: {e}", exc_info=True)
         return f"Critical error during agent execution: {type(e).__name__} - {str(e)}", None
-

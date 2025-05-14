@@ -112,7 +112,7 @@ Your response will always start with a `Thought:` followed by either a `Final An
     **(System provides Observation here)**
 
     ```
-    Observation: {{"status": "success", "processed_emails": [{{"original_email": {{"id": "msg123", "threadId": "threadABC", "sender": "John Doe <john.doe@example.com>", "sender_email": "john.doe@example.com", "subject": "Meeting Follow-up", "body": "Hi Jarvis (User), great meeting today. Can we discuss point X tomorrow?"}}, "suggested_draft_reply": "Hi John,\n\nCertainly, I'm available tomorrow to discuss point X. What time works best for you?\n\nBest,\nDebajyoti", "requires_action": true}}]}}
+    Observation: {{"status": "success", "processed_emails": [{{"original_email": {{"id": "msg123", "threadId": "threadABC", "sender": "John Doe <john.doe@example.com>", "sender_email": "john.doe@example.com", "subject": "Meeting Follow-up", "body": "Hi Jarvis (User), great meeting today. Can we discuss point X tomorrow?"}}, "suggested_draft_reply": "Hi John,\\n\\nCertainly, I'm available tomorrow to discuss point X. What time works best for you?\\n\\nBest,\\nDebajyoti", "requires_action": true}}]}}
     Thought: The email tool processed one new email and provided a draft reply. I need to present this draft to the user and ask for approval or modifications before potentially sending it.
     Final Answer: I found a new email from John Doe regarding "Meeting Follow-up". I've drafted a reply: "Hi John, Certainly, I'm available tomorrow to discuss point X. What time works best for you? Best, Debajyoti". Would you like me to send this, or would you like to make changes?
     ```
