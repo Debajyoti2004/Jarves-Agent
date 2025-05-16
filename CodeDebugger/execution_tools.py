@@ -46,8 +46,8 @@ def extract_missing_modules(error_traceback: str) -> list:
     Returns:
         list: A list of unique missing module names found.
     """
-    # if error_traceback.startswith("{"):
-    #     error_traceback=json.loads(error_traceback)["error_traceback"]
+    if error_traceback.startswith("{"):
+        error_traceback=json.loads(error_traceback)["error_traceback"]
 
     pattern = r"(?:ModuleNotFoundError|ImportError): No module named ['\"]([^'\"]+)['\"]"
     matches = re.findall(pattern, error_traceback)
@@ -75,17 +75,18 @@ def executor(code: str) -> str:
     Returns:
         str: A message indicating success (✅) or failure (❌), with output or error details.
     """
+    print(f"Input:{code}")
     try:
         sandbox = get_sandbox()
     except Exception as e:
         return f"❌ Critical Error: Failed to get E2B sandbox: {e}"
 
     logger.info(f"Executing command:\n```python\n{code}\n```")
-    # if code.startswith("{"):
-    #     code = json.loads(code)
-    #     if code["code"].strip() is None:
-    #         return "No code given by user"
-    # code = code["code"]
+    if code.startswith("{"):
+        code = json.loads(code)
+        if code["code"].strip() is None:
+            return "No code given by user"
+    code = code["code"]
 
     try:
         execution = sandbox.run_code(code, timeout=120)
@@ -147,8 +148,8 @@ def file_read(path: str) -> str:
         str: The content of the file or an error message.
     """
 
-    # if path.startswith("{"):
-    #     path = json.loads(path)["path"]
+    if path.startswith("{"):
+        path = json.loads(path)["path"]
     try:
         sandbox = get_sandbox()
         logger.info(f"Reading file from sandbox: {path}")
@@ -203,8 +204,8 @@ def list_files(path: str = '.') -> str:
     Returns:
         str: A list of files/directories or an error message.
     """ 
-    # if path.startswith("{"):
-    #     path = json.loads(path)["path"]
+    if path.startswith("{"):
+        path = json.loads(path)["path"]
     try:
         sandbox = get_sandbox()
         logger.info(f"Listing files in sandbox path: {path}")

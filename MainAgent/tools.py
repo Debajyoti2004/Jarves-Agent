@@ -164,8 +164,8 @@ def open_app_tool(app_name: str) -> str:
     """
     ✅ Use this tool to open an app on the laptop. Args defined in schema.
     """
-    # if app_name.startswith("{"):
-    #     app_name = json.loads(app_name).get("app_name","chrome")
+    if app_name.startswith("{"):
+        app_name = json.loads(app_name).get("app_name","chrome")
 
     logger.info(f"Attempting to open app: {app_name}")
     speaker.speak(f"Certainly.Attempting to open {app_name} for you.")
@@ -190,8 +190,8 @@ def open_website_tool(web_site_name: str) -> str:
     """
     ✅ Use this tool to open a website. Args defined in schema.
     """
-    # if web_site_name.startswith("{"):
-    #     web_site_name = json.loads(web_site_name).get("web_site_name","google")
+    if web_site_name.startswith("{"):
+        web_site_name = json.loads(web_site_name).get("web_site_name","google")
 
     logger.info(f"Attempting to open website: '{web_site_name}'")
     speaker.speak(f"Accessing the web. Opening {web_site_name} now.")
@@ -225,15 +225,15 @@ def amazon_web_scrapper(
     {"rating_min": 4.0, "price_max": 5000, "prime_eligible": true}.
     Returns a JSON string containing a list of product details or an error message.
     """
-    # if product_name.startswith("{"):
-    #     try:
-    #         input_data = json.loads(product_name)
-    #         product_name = input_data.get("product_name", "ASUS Gaming Laptop")
-    #         user_preferences = input_data.get("user_preferences", user_preferences if user_preferences is not None else {"rating_min": 3})
+    if product_name.startswith("{"):
+        try:
+            input_data = json.loads(product_name)
+            product_name = input_data.get("product_name", "ASUS Gaming Laptop")
+            user_preferences = input_data.get("user_preferences", user_preferences if user_preferences is not None else {"rating_min": 3})
         
-    #     except json.JSONDecodeError as e:
-    #         logger.error(f"Error parsing tool_input as JSON for Amazon: {e}")
-    #         return json.dumps({"status": "error", "message": "Invalid JSON input format for product_name field."})
+        except json.JSONDecodeError as e:
+            logger.error(f"Error parsing tool_input as JSON for Amazon: {e}")
+            return json.dumps({"status": "error", "message": "Invalid JSON input format for product_name field."})
 
     prefs_str = f" with preferences {user_preferences}" if user_preferences else ""
     logger.info(f"Tool: Starting Amazon search for '{product_name}'{prefs_str}")
@@ -290,17 +290,17 @@ def google_hotel_scrapper(
     {"price_max": 300, "rating_min": 4.0, "amenities": ["Pool", "Free WiFi"]}.
     Returns a JSON string with a list of hotel details or an error/status message.
     """
-    # if location.startswith("{"):
-    #     try:
-    #         input_data = json.loads(location)
-    #         location = input_data.get("location", "Kolkata")
-    #         check_in_date = input_data.get("check_in_date", "2025-09-11")
-    #         check_out_date = input_data.get("check_out_date", "2025-09-18")
-    #         user_preferences = input_data.get("user_preferences", user_preferences)
+    if location.startswith("{"):
+        try:
+            input_data = json.loads(location)
+            location = input_data.get("location", "Kolkata")
+            check_in_date = input_data.get("check_in_date", "2025-09-11")
+            check_out_date = input_data.get("check_out_date", "2025-09-18")
+            user_preferences = input_data.get("user_preferences", user_preferences)
         
-    #     except json.JSONDecodeError as e:
-    #         logger.error(f"Error parsing tool_input as JSON for Hotel: {e}")
-    #         return json.dumps({"status": "error", "message": "Invalid JSON input format for location field."})
+        except json.JSONDecodeError as e:
+            logger.error(f"Error parsing tool_input as JSON for Hotel: {e}")
+            return json.dumps({"status": "error", "message": "Invalid JSON input format for location field."})
 
     prefs = user_preferences or {}
     prefs_str = f" with preferences {prefs}" if prefs else ""
@@ -368,18 +368,18 @@ def google_flight_scrapper(
     {"num_passengers": 1, "max_stops": 0, "preferred_airline": "AirlineName"}.
     Returns a JSON string with a list of flight options or an error/status message.
     """
-    # if to_place.startswith("{"):
-    #     try:
-    #         input_data = json.loads(to_place)
-    #         to_place = input_data.get("to_place", "Delhi")
-    #         departure_date = input_data.get("departure_date", "2025-09-15")
-    #         returned_date = input_data.get("returned_date", "2025-09-17")
-    #         from_place = input_data.get("from_place", from_place if from_place is not None else "Kolkata")
-    #         user_preferences = input_data.get("user_preferences", user_preferences if user_preferences is not None else {"rating_min":3})
+    if to_place.startswith("{"):
+        try:
+            input_data = json.loads(to_place)
+            to_place = input_data.get("to_place", "Delhi")
+            departure_date = input_data.get("departure_date", "2025-09-15")
+            returned_date = input_data.get("returned_date", "2025-09-17")
+            from_place = input_data.get("from_place", from_place if from_place is not None else "Kolkata")
+            user_preferences = input_data.get("user_preferences", user_preferences if user_preferences is not None else {"rating_min":3})
         
-    #     except json.JSONDecodeError as e:
-    #         logger.error(f"Error parsing tool_input as JSON for Flight: {e}")
-    #         return json.dumps({"status": "error", "message": "Invalid JSON input format for to_place field."})
+        except json.JSONDecodeError as e:
+            logger.error(f"Error parsing tool_input as JSON for Flight: {e}")
+            return json.dumps({"status": "error", "message": "Invalid JSON input format for to_place field."})
 
     from_loc = from_place or "your current location"
     prefs = user_preferences or {}
@@ -440,10 +440,10 @@ def jarves_ocr_scanner(
     """
     📸 Scans a physical document using the camera. Args defined in schema. Returns JSON string with structured data or error.
     """
-    # if document_type.startswith("{"):
-    #     input = json.loads(document_type)
-    #     document_type = input.get("document_type","general document")
-    #     custom_instructions = input.get("custom_instructions","Extract all key information. If it's an ID, get name, ID number, DOB, expiry. If a receipt, get store, total, date, items. For notes, summarize key points.")
+    if document_type.startswith("{"):
+        input = json.loads(document_type)
+        document_type = input.get("document_type","general document")
+        custom_instructions = input.get("custom_instructions","Extract all key information. If it's an ID, get name, ID number, DOB, expiry. If a receipt, get store, total, date, items. For notes, summarize key points.")
 
 
     logger.info(f"🛠️✨ Jarves Scanner: '{document_type}'")
@@ -500,11 +500,11 @@ def code_agent(
     """
     🤖 Analyzes code provided via an input portal. Args defined in schema. Returns JSON string with analysis results or error.
     """
-    # if end_keyword.startswith("{"):
-    #     input = json.loads(end_keyword)
-    #     end_keyword = input.get("end_keyword","Ctrl+Z")
-    #     language = input.get("language","python")
-    #     task = input.get("task","debug")
+    if end_keyword.startswith("{"):
+        input = json.loads(end_keyword)
+        end_keyword = input.get("end_keyword","Ctrl+Z")
+        language = input.get("language","python")
+        task = input.get("task","debug")
 
     logger.info(f"🛠️🤖 Code Agent Tool Activated. Task: '{task}', Lang: '{language}', End keyword: '{end_keyword}'")
     speaker.speak(f"Activating the Code Agent for {language} to perform task: {task}.")
@@ -575,10 +575,10 @@ def web_and_image_searcher(query: str, include_image: bool = False) -> str:
     Synthesizes information from search results and image analysis (if applicable) into a final answer.
     Use this for general knowledge questions, asking about things in images, or finding information online.
     """
-    # if query.startswith("{"):
-    #     input = json.loads(query)
-    #     query = input.get("query","What is that thing?")
-    #     include_image = input.get("include_image",False)
+    if query.startswith("{"):
+        input = json.loads(query)
+        query = input.get("query","What is that thing?")
+        include_image = input.get("include_image",False)
 
     logger.info(f"🛠️🔎 Web/Image Search Tool Activated. Query: '{query}', Include Image: {include_image}")
     speaker.speak(f"Searching the web for information regarding: {query}.")
@@ -660,12 +660,12 @@ def visual_object_finder(
     Returns JSON string indicating if the object was found ('status': 'found'/'not_found'/'error'/'cancelled'),
     its detected name, confidence, and approximate location in the view if found.
     """
-    # if object_name.startswith("{"):
-    #     input = json.loads(object_name)
-    #     object_name = input.get("object_name","pen")
-    #     confidence_threshold = input.get("confidence_threshold",0.5)
-    #     camera_index = input.get("camera_index",0)
-    #     search_duration_seconds = input.get("search_duration_seconds",30)
+    if object_name.startswith("{"):
+        input = json.loads(object_name)
+        object_name = input.get("object_name","pen")
+        confidence_threshold = input.get("confidence_threshold",0.5)
+        camera_index = input.get("camera_index",0)
+        search_duration_seconds = input.get("search_duration_seconds",30)
         
     logger.info(f"🛠️👀 Visual Object Finder Activated. Searching for: '{object_name}'")
     speaker.speak(f"Activating visual search. Looking for a {object_name}. Use W/X for brightness, A/D for contrast. Press Q to quit.")
@@ -820,18 +820,18 @@ def email_manager(
     📧 Manages emails: checks new unread, drafts replies with AI & history, sends pre-approved drafts.
     Requires user Google OAuth on first run. Use 'check_new' for unread. Use 'send_draft' to send.
     """
-    # if action.startswith("{"):
-    #     parsed_data_dict = json.loads(action)
-    #     action = parsed_data_dict.get("action")
-    #     max_emails_to_check = parsed_data_dict.get("max_emails_to_check", 3)
-    #     recipient_email = parsed_data_dict.get("recipient_email") 
-    #     subject = parsed_data_dict.get("subject")
-    #     body = parsed_data_dict.get("body")
-    #     original_message_id = parsed_data_dict.get("original_message_id")
-    #     original_thread_id = parsed_data_dict.get("original_thread_id")
-    #     original_sender = parsed_data_dict.get("original_sender")
-    #     original_subject = parsed_data_dict.get("original_subject")
-    #     original_body_snippet = parsed_data_dict.get("original_body_snippet")
+    if action.startswith("{"):
+        parsed_data_dict = json.loads(action)
+        action = parsed_data_dict.get("action")
+        max_emails_to_check = parsed_data_dict.get("max_emails_to_check", 3)
+        recipient_email = parsed_data_dict.get("recipient_email") 
+        subject = parsed_data_dict.get("subject")
+        body = parsed_data_dict.get("body")
+        original_message_id = parsed_data_dict.get("original_message_id")
+        original_thread_id = parsed_data_dict.get("original_thread_id")
+        original_sender = parsed_data_dict.get("original_sender")
+        original_subject = parsed_data_dict.get("original_subject")
+        original_body_snippet = parsed_data_dict.get("original_body_snippet")
 
     if not EMAIL_TOOL_AVAILABLE:
         return json.dumps({"status": "error", "message": "Email tool logic unavailable."})
