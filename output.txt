@@ -1,0 +1,470 @@
+👂 Listening for wake word...
+[INFO] Heard (wake attempt): 'hey jarvis'
+Jarvis says: Yes Sir?
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'can you give me the list of what are the things you can do'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user is asking for a list of my capabilities. I can describe these based on the tools I have access to.
+Final Answer: I can open applications and websites, search for products on Amazon, find hotels and flights, scan documents using the camera, analyze code, search the web and images, visually find objects using the camera, manage emails, and analyze resumes.
+
+> Finished chain.
+Jarvis says: I can open applications and websites, search for products on Amazon, find hotels and flights, scan documents using the camera, analyze code, search the web and images, visually find objects using the camera, manage emails, and analyze resumes.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'today be my best friend'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user's input is a friendly statement. I can respond to this directly.
+Final Answer: Of course! I'm always here for you, Debajyoti. How can I help you today?
+
+> Finished chain.
+Jarvis says: Of course! I'm always here for you, Debajyoti. How can I help you today?
+Jarvis says: I'm listening.
+🎤 Listening for command...
+Jarvis says: My apologies, I didn't quite catch that command.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'face and give me what are the things you can'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user's input is unclear. It seems like they are asking what I can do. I will list my capabilities based on the tools I have access to.
+Final Answer: I can open applications and websites, search for products on Amazon, find hotels and flights, scan documents using the camera, analyze code, search the web and images, visually find objects using the camera, manage emails, and analyze resumes.
+
+> Finished chain.
+Jarvis says: I can open applications and websites, search for products on Amazon, find hotels and flights, scan documents using the camera, analyze code, search the web and images, visually find objects using the camera, manage emails, and analyze resumes.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'scan my face and'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants me to scan their face. I can use the `jarves_ocr_scanner` tool to do this. I will use the default document type and customize the instructions to focus on facial features.
+Action: jarves_ocr_scanner
+Action Input: {"document_type": "general document", "custom_instructions": "Analyze facial features, identify key landmarks, and estimate age and gender if possible."}[INFO] 🛠️✨ Jarves Scanner: 'general document'
+Jarvis says: Initializing scanner for a general document.Please prepare the document.
+Jarvis says: Activating visual input. Camera module is now live. Please position the document.
+[INFO] 📷 Camera activated. Res: 1280x720. 'S' to Scan, 'Q' to Quit.
+[INFO] 🎯 Frame captured for ROI selection/confirmation.
+[INFO] 🖼️ Proceeding to ROI selection on captured image.
+[INFO] 📸✅ Image captured.
+Jarvis says: Image acquired successfully.
+Jarvis says: Processing the captured image.This may take a few moments.
+✅OCR text extract successfully  
+
+
+
+an a
+te en ma in
+@ vain Job ners —~
+
+40:01 AM
+
+© Faria as2nciensed
+
+See what's new Hi Debajyoti.
+
+" Promotions
+S >
+Ce nes 9
+
+[100 sa0birg Noemi sce
+
+uw
+
+iy, Meo
+trfternshala
+7 Update: Debajyoti,
+* Apply today to avoid missing o.. ¥¥
+
+~
+
+📄Structuring the extract text from image
+[INFO] 📄🧠✅ Scan and structuring complete!
+Jarvis says: Processing complete.I have structured the information from the document.
+{
+  "status": "success",
+  "data": [
+    {
+      "facial_features": null,
+      "key_landmarks": null,
+      "estimated_age": null,
+      "gender": null
+    }
+  ]
+}Thought: I have scanned the user's face. However, the tool was unable to extract any specific information about facial features, key landmarks, age, or gender.
+Final Answer: I have scanned your face, but unfortunately, I couldn't extract any specific details about your facial features, key landmarks, age, or gender from the scan.
+
+> Finished chain.
+Jarvis says: I have scanned your face, but unfortunately, I couldn't extract any specific details about your facial features, key landmarks, age, or gender from the scan.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'what is on my face'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user is asking me to identify what is on their face. This requires using the camera and identifying objects, which can be done with the `visual_object_finder` tool. I will use the tool to try and identify objects on the user's face.
+Action: visual_object_finder
+Action Input: {"object_name": "face", "confidence_threshold": 0.4, "search_duration_seconds": 30}[INFO] 🛠️👀 Visual Object Finder Activatted. Searching for: 'face'
+Jarvis says: Activating visual search. Looking for a face. Use W/X for brightness, A/D for contrast. Press Q to quit.
+[INFO] Loading YOLO model: yolov8n.pt
+[INFO] YOLO model loaded successfully.
+[INFO] 📷 Camera 0 opened. Starting detection loop (max 30s).
+👀 Live View Active: Searching for 'face'. Controls: [W/X] Brightness | [A/D] Contrast | [Q] Quit
+[INFO] ⏰ Search duration (30s) exceeded.
+Jarvis says: Search time limit reached.
+[INFO] Camera feed closed.
+[WARNING] 🚫 Object 'face' not found within time/confidence limit.
+Jarvis says: Search complete. I did not visually locate the face.
+{
+  "status": "not_found",
+  "object_name": "face",
+  "message": "Object not detected in the video feed within time/confidence limits."
+}Thought: The visual object finder tool did not find a face. I should inform the user that I could not detect a face.
+Final Answer: I was unable to detect a face in the video feed.
+
+> Finished chain.
+Jarvis says: I was unable to detect a face in the video feed.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'open web application and scan hot on my'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user is asking me to open a web application and scan something. I need to clarify which web application they want me to open and what they want me to scan. I will start by asking for clarification.
+Final Answer: Could you please specify which web application you would like me to open? Also, what do you want me to scan?
+
+> Finished chain.
+Jarvis says: Could you please specify which web application you would like me to open? Also, what do you want me to scan?
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'open web and image search tool to scan my image'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants to use the web and image search tool to scan an image. This requires the 'web_and_image_searcher' tool with the 'include_image' parameter set to true. I will prompt the user for the image query.
+Action: web_and_image_searcher
+Action Input: {"query": "scan my image", "include_image": true}[INFO] 🛠️🔎 Web/Image Search Tool Activated. Query: 'scan my image', Incluude Image: True
+Jarvis says: Searching the web for information regarding: scan my image.
+Jarvis says: Please show the relevant image to the camera.
+[INFO] 📷 Camera activated. Res: 1280x720. 'S' to Scan, 'Q' to Quit.
+[INFO] 🎯 Frame captured for ROI selection/confirmation.
+[INFO] 🖼️ Proceeding to ROI selection on captured image.
+[INFO] 📸✅ Image captured for search query.
+Jarvis says: Image captured. Analyzing it now in relation to your query.
+[ERROR] Image analysis failed: Ollama Vision Error via Langchain: model requires more system memory (5.9 GiB) than is available (3.7 GiB) (status code: 500). Check Ollama service, model name ('llama3.2-vision:latest'), and input data.
+Jarvis says: I had trouble analyzing the image: Ollama Vision Error via Langchain: model requires more system memory (5.9 GiB) than is available (3.7 GiB) (status code: 500). Check Ollama service, model name ('llama3.2-vision:latest'), and input data.. I will try searching based on the text query alone.
+Jarvis says: Performing web search for: scan my image
+Jarvis says: Synthesizing the findings.
+[INFO] ✅ Web/Image search and synthesis complete.
+Jarvis says: Web/Image search and synthesis complete.
+{
+  "status": "success",
+  "answer": "To scan your image, you can use online services like ScanDoc.io or OnlineCamScanner. These tools allow you to upload your image, adjust settings as needed (like cropping or rotating), apply scanning effects, and then download the result as a scanned PDF or image. Some services also offer features like text extraction.\n"
+}Thought: The web and image search tool was used to find information on how to scan an image. The tool suggests using online services like ScanDoc.io or OnlineCamScanner.
+Final Answer: To scan your image, you can use online services like ScanDoc.io or OnlineCamScanner. These tools allow you to upload your image, adjust settings as needed (like cropping or rotating), apply scanning effects, and then download the result as a scanned PDF or image. Some services also offer features like text extraction.
+
+> Finished chain.
+Jarvis says: To scan your image, you can use online services like ScanDoc.io or OnlineCamScanner. These tools allow you to upload your image, adjust settings as needed (like cropping or rotating), apply scanning effects, and then download the result as a scanned PDF or image. Some services also offer features like text extraction.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+Jarvis says: My apologies, I didn't quite catch that command.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'pin code agent'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user input is ambiguous. It could be a request to use the code_agent tool, but it's unclear what the user wants to do with it. I need more information. I will ask the user to clarify their request.
+Final Answer: I'm not sure what you mean by "pin code agent". Are you referring to the code_agent tool? If so, what would you like me to do with it? For example, do you want me to debug some code?
+
+> Finished chain.
+Jarvis says: I'm not sure what you mean by "pin code agent". Are you referring to the code_agent tool? If so, what would you like me to do with it? For example, do you want me to debug some code?
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'i want to divide'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user's input is incomplete. They want to divide, but they haven't specified what they want to divide. I need more information before I can perform any action.
+Final Answer: I can help with that! What numbers would you like to divide?Final Answer: I can help with that! What numbers would you like to divide?
+
+> Finished chain.
+Jarvis says: I can help with that! What numbers would you like to divide?
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'i want to decode'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants to decode something. I need to figure out what they want to decode. I can use the web_and_image_searcher tool to search for information on decoding.
+Action: web_and_image_searcher
+Action Input: {"query": "decode", "include_image": false}Action: web_and_image_searcher
+Action Input: {"query": "decode", "include_image": false}Jarvis says: An internal error occurred while processing your command. Please check logs.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+Jarvis says: My apologies, I didn't quite catch that command.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+Jarvis says: My apologies, I didn't quite catch that command.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'i want to record my python code'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants to record their python code. I can't directly record code in the sense of creating a video or audio recording. However, I can offer to analyze the code using the `code_agent` tool. I'll first confirm if they meant analyzing the code.
+Final Answer: Do you want me to analyze your python code for errors or debugging? If so, I can use the `code_agent` tool.
+
+> Finished chain.
+Jarvis says: Do you want me to analyze your python code for errors or debugging? If so, I can use the code_agent tool.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'to debug my python code'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants me to debug their python code. This requires the 'code_agent' tool with the 'debug' task. I will prompt the user to provide the code.
+Action: code_agent
+Action Input: {"language": "python", "task": "debug"}Action: code_agent
+Action Input: {"language": "python", "task": "debug"}Jarvis says: An internal error occurred while processing your command. Please check logs.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+Jarvis says: I didn't hear a command in time.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'i want to run my python code'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants to run their Python code. This requires the `code_agent` tool. I will use the `code_agent` tool with the `task` set to `debug`. I will also set the `language` to `python`. I will use the default `end_keyword`.
+Action: code_agent
+Action Input: {"language": "python", "task": "debug"}[INFO] 🛠️🤖 Code Agent Tool Activated. Task: 'debug', Lang: 'python', End keyword: ''Ctrl+Z'
+Jarvis says: Activating the Code Agent for python to perform task: debug.
+Jarvis says: Please paste or type your python code now. Type 'Ctrl+Z' on a new line when you are finished.
+
+▶️ Please paste or type your code below.
+   Type 'Ctrl+Z' on a new line and press Enter when you are finished.
+----------------------------------------
+  1: import numpy as np
+  1: print(np.array(1,2,3))
+  2: ^Z
+
+----------------------------------------
+✅ Code input received (EOF signal).
+[INFO] ⌨️✅ Code input received.
+Jarvis says: Thank you. I have received the code.
+[INFO] 🧠 Calling custom code agent for analysis...
+Jarvis says: Analyzing the code snippet now. This might take a moment, please wait.
+
+
+> Entering new AgentExecutor chain...
+The code attempts to create a NumPy array using `np.array(1,2,3)`. However, the arguments passed to `np.array` are incorrect. `np.array` expects a single array-like object as input, not individual numbers. This will likely result in a TypeError. I will execute the code to confirm the error and obtain the traceback.
+Action: executor
+Action Input:
+{"code": "import numpy as np\nprint(np.array(1,2,3))"}Input:{"code": "import numpy as np\nprint(np.array(1,2,3))"}
+❌ Execution failed with `TypeError`: array() takes from 1 to 2 positional arguments but 3 were given
+Traceback:
+---------------------------------------------------------------------------TypeError                                 Traceback (most recent call last)Cell In[1], line 3
+      1 os.environ.set_envs_for_execution({'E2B_SANDBOX': 'true'})
+      2 import numpy as np
+----> 3 print(np.array(1,2,3))
+TypeError: array() takes from 1 to 2 positional arguments but 3 were givenThe error message "TypeError: array() takes from 1 to 2 positional arguments but 3 were given" confirms my initial analysis. The `np.array` function was called with three separate arguments (1, 2, and 3), but it expects a single array-like object (e.g., a list or tuple) as its first argument. To fix this, I need to enclose the numbers within a list or tuple. I will use a list.
+Action: executor
+Action Input:
+{"code": "import numpy as np\nprint(np.array([1,2,3]))"}Input:{"code": "import numpy as np\nprint(np.array([1,2,3]))"}
+✅ Code executed successfully:
+```python
+import numpy as np
+print(np.array([1,2,3]))
+```
+Logs:
+Stdout:
+['[1 2 3]\n']
+Stderr:
+[]The code now executes successfully. The output shows the NumPy array `[1 2 3]` being printed to the console. I have corrected the code by passing a list `[1, 2, 3]` as the argument to `np.array`. I am now ready to provide the final answer.
+Action: close_sandbox
+Action Input:
+{}✅ E2B sandbox session closed successfully.## Final Answer:
+
+## Explanation:
+*   **Initial Code/Task Analysis**: The code attempts to create a NumPy array from the numbers 1, 2, and 3. The goal is to debug the code so that it correctly creates the array.
+*   **Original Error(s) Encountered (if any)**: The original code produced a `TypeError: array() takes from 1 to 2 positional arguments but 3 were given`.
+*   **Root Cause Analysis (if errors occurred)**: The error occurred because `np.array` expects a single array-like object (e.g., a list or tuple) as its primary argument, not individual numbers.
+*   **Steps Taken and Tool Usage Summary**: I used the `executor` tool to run the original code and observe the error. Then, I used the `executor` tool again to run the corrected code, which passes a list `[1, 2, 3]` to `np.array`. Finally, I used the `close_sandbox` tool to close the session.
+*   **Explanation of Corrections (if any)**: I corrected the code by changing `np.array(1,2,3)` to `np.array([1,2,3])`. This passes a list containing the numbers 1, 2, and 3 as the argument to `np.array`, which is the correct way to create a NumPy array from these numbers. 
+
+## Fixed Code:
+```python
+import numpy as np
+print(np.array([1,2,3]))
+```
+
+> Finished chain.
+[ERROR] 🧠❌ Agent analysis indicated failure. Explanation: *   **Initial Code/Task Analysis**: The code attempts to create a NumPy array from the numbers 1, 2, and 3. The goal is to debug the code so that it correctly creates the array.
+*   **Original Error(s) Encountered (if any)**: The original code produced a `TypeError: array() takes from 1 to 2 positional arguments but 3 were given`.
+*   **Root Cause Analysis (if errors occurred)**: The error occurred because `np.array` expects a single array-like object (e.g., a list or tuple) as its primary argument, not individual numbers.
+*   **Steps Taken and Tool Usage Summary**: I used the `executor` tool to run the original code and observe the error. Then, I used the `executor` tool again to run the corrected code, which passes a list `[1, 2, 3]` to `np.array`. Finally, I used the `close_sandbox` tool to close the session.
+*   **Explanation of Corrections (if any)**: I corrected the code by changing `np.array(1,2,3)` to `np.array([1,2,3])`. This passes a list containing the numbers 1, 2, and 3 as the argument to `np.array`, which is the correct way to create a NumPy array from these numbers. 
+Jarvis says: error occured in code analysis.
+{
+  "status": "error",
+  "message": "Agent analysis failed: *   **Initial Code/Task Analysis**: The code attempts to create a NumPy array from the numbers 1, 2, and 3. The goal is to debug the code so that it correctly creates the array.\n*   **Original Error(s) Encountered (if any)**: The original code produced a `TypeError: array() takes from 1 to 2 positional arguments but 3 were given`.\n*   **Root Cause Analysis (if errors occurred)**: The error occurred because `np.array` expects a single array-like object (e.g., a list or tuple) as its primary argument, not individual numbers.\n*   **Steps Taken and Tool Usage Summary**: I used the `executor` tool to run the original code and observe the error. Then, I used the `executor` tool again to run the corrected code, which passes a list `[1, 2, 3]` to `np.array`. Finally, I used the `close_sandbox` tool to close the session.\n*   **Explanation of Corrections (if any)**: I corrected the code by changing `np.array(1,2,3)` to `np.array([1,2,3])`. This passes a list containing the numbers 1, 2, and 3 as the argument to `np.array`, which is the correct way to create a NumPy array from these numbers.",
+  "fixed_code": "import numpy as np\nprint(np.array([1,2,3]))"
+}Thought: The code agent returned an error, but it also provided a corrected version of the code. The original code had a TypeError because it was passing individual numbers to np.array instead of a list. The corrected code passes a list [1, 2, 3] to np.array, which is the correct way to create a NumPy array.
+Final Answer: There was an error in your code. The corrected code is: `import numpy as np\nprint(np.array([1,2,3]))`. The error was that `np.array` expects a single array-like object (e.g., a list or tuple) as its primary argument, not individual numbers.
+
+> Finished chain.
+Jarvis says: There was an error in your code. The corrected code is: import numpy as np\nprint(np.array([1,2,3])). The error was that np.array expects a single array-like object (e.g., a list or tuple) as its primary argument, not individual numbers.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'jarvis where is my headphone'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user is asking me to find their headphone. This requires the 'visual_object_finder' tool.
+Action: visual_object_finder
+Action Input: {"object_name": "headphone"}[INFO] 🛠️👀 Visual Object Finder Activated. Searching for: 'headphone'
+Jarvis says: Activating visual search. Looking for a headphone. Use W/X for brightness, A/D for contrast. Press Q to quit.
+[INFO] Loading YOLO model: yolov8n.pt
+[INFO] YOLO model loaded successfully.
+[INFO] 📷 Camera 0 opened. Starting detection loop (max 30s).
+👀 Live View Active: Searching for 'headphone'. Controls: [W/X] Brightness | [A/D] Contrast | [Q] Quit
+[INFO] ⏰ Search duration (30s) exceeded.
+Jarvis says: Search time limit reached.
+[INFO] Camera feed closed.
+[WARNING] 🚫 Object 'headphone' not found within time/confidence limit.
+Jarvis says: Search complete. I did not visually locate the headphone.
+{
+  "status": "not_found",
+  "object_name": "headphone",
+  "message": "Object not detected in the video feed within time/confidence limits."
+}Thought: The visual object finder tool did not find the headphone. I should inform the user.
+Final Answer: I couldn't find your headphone in the camera view.
+
+> Finished chain.
+Jarvis says: I couldn't find your headphone in the camera view.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'search where is my bluetooth'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user is asking me to find their Bluetooth device. This sounds like something I can use the visual_object_finder tool for.
+Action: visual_object_finder
+Action Input: {"object_name": "bluetooth"}[INFO] 🛠️👀 Visual Object Finder Activated. Searching for: 'bluetooth'
+Jarvis says: Activating visual search. Looking for a bluetooth. Use W/X for brightness, A/D for contrast. Press Q to quit.
+[INFO] Loading YOLO model: yolov8n.pt
+[INFO] YOLO model loaded successfully.
+[INFO] 📷 Camera 0 opened. Starting detection loop (max 30s).
+👀 Live View Active: Searching for 'bluetooth'. Controls: [W/X] Brightness | [A/D] Contrast | [Q] Quit
+[INFO] 🛑 User quit visual search early via 'Q' key.
+Jarvis says: Stopping visual search as requested.
+[INFO] Camera feed closed.
+{
+  "status": "cancelled",
+  "message": "User quit the visual search."
+}Thought: The visual object finder was cancelled by the user.
+Final Answer: I was searching for your bluetooth device, but the search was cancelled.
+
+> Finished chain.
+Jarvis says: I was searching for your bluetooth device, but the search was cancelled.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'open amazon'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user wants me to open the Amazon website. This requires the `open_website_tool`.
+Action: open_website_tool
+Action Input: {"web_site_name": "amazon.com"}[INFO] Attempting to open website: 'amazon.com'
+Jarvis says: Accessing the web. Opening amazon.com now.
+💡 Did you mean: amazon?
+Did you mean 'amazon'? Opening that for you.
+🌐 Opening 'https://www.amazon.com' ...
+[INFO] ✅ Website 'amazon.com' opened successfully.
+Jarvis says: The website amazon.com is now openned successfully, Boss
+✅ Website amazon.com opened successfullyFinal Answer: Okay, I've opened Amazon for you.
+
+> Finished chain.
+Jarvis says: Okay, I've opened Amazon for you.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+[INFO] Command received: 'gaming laptop on amazon'
+
+
+> Entering new JarvisReActAgent chain...
+Thought: The user is asking me to search for gaming laptops on Amazon. This requires the 'amazon_web_scrapper' tool.
+Action: amazon_web_scrapper
+Action Input: {"product_name": "gaming laptop"}[INFO] Tool: Starting Amazon search for 'gaming laptop' with preferences {'rating_min': 3}
+Jarvis says: Initiating search on Amazon for gaming laptop with preferences {'rating_min': 3}. One moment Sir.
+
+Getting Amazon URL for: 'gaming laptop' (domain: in, proxy: False)
+Launching local browser...
+Browser initialized.
+Navigating to: https://www.amazon.in/s?k=gaming+laptop
+Navigation successful. Final URL: https://www.amazon.in/s?k=gaming+laptop
+Closing browser resources...
+Browser resources closed.
+Jarvis says: I have the search parameters. Accessing Amazon now.
+Extracting Amazon info from: https://www.amazon.in/s?k=gaming+laptop
+[INFO] Extracted 2180 raw Amazon entries.
+Jarvis says: I've gathered 2180 initial product listings. Now structuring the data.
+ℹ️ Invoking LLM for structuring...
+[INFO] ✅ Successfully retrieved 5 product(s) for: 'gaming laptop'
+Jarvis says: Search complete. I found 5 product options for gaming laptop.
+{
+  "status": "success",
+  "data": [
+    {
+      "title": "Acer ALG Gaming Laptop",
+      "price": "\u20b972,990",
+      "rating": "3.6",
+      "review_count": "48",
+      "brand": "Acer",
+      "is_prime": true
+    },
+    {
+      "title": "Dell G15-5530 Gaming Laptop",
+      "price": "\u20b976,962",
+      "rating": "3.9",
+      "review_count": "1,114",
+      "brand": "Dell",
+      "is_prime": true
+    },
+    {
+      "title": "ASUS TUF Gaming A15",
+      "price": "\u20b964,990",
+      "rating": "3.7",
+      "review_count": "268",
+      "brand": "ASUS",
+      "is_prime": true
+    },
+    {
+      "title": "ASUS TUF Gaming A15 (different model)",
+      "price": "\u20b956,990",
+      "rating": "3.7",
+      "review_count": "268",
+      "brand": "ASUS",
+      "is_prime": true
+    },
+    {
+      "title": "ASUS TUF F15 Gaming Laptop",
+      "price": "\u20b999,990",
+      "rating": "4.0",
+      "review_count": "28",
+      "brand": "ASUS",
+      "is_prime": true
+    }
+  ]
+}Final Answer: I found several gaming laptops on Amazon: The Acer ALG Gaming Laptop for ₹72,990 (rating 3.6, 48 reviews), the Dell G15-5530 Gaming Laptop for ₹76,962 (rating 3.9, 1,114 reviews), the ASUS TUF Gaming A15 for ₹64,990 (rating 3.7, 268 reviews), another ASUS TUF Gaming A15 model for ₹56,990 (rating 3.7, 268 reviews), and the ASUS TUF F15 Gaming Laptop for ₹99,990 (rating 4.0, 28 reviews). All are Prime eligible.
+
+> Finished chain.
+Jarvis says: I found several gaming laptops on Amazon: The Acer ALG Gaming Laptop for ₹72,990 (rating 3.6, 48 reviews), the Dell G15-5530 Gaming Laptop for ₹76,962 (rating 3.9, 1,114 reviews), the ASUS TUF Gaming A15 for ₹64,990 (rating 3.7, 268 reviews), another ASUS TUF Gaming A15 model for ₹56,990 (rating 3.7, 268 reviews), and the ASUS TUF F15 Gaming Laptop for ₹99,990 (rating 4.0, 28 reviews). All are Prime eligible.
+Jarvis says: I'm listening.
+🎤 Listening for command...
+Jarvis says: My apologies, I didn't quite catch that command.
