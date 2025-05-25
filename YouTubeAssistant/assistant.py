@@ -65,13 +65,15 @@ class YouTubeVoiceAssistant:
             if current_page_url and "watch?v=" in current_page_url:
                 self.tts.speak("Page changed to a video, stopping hover sequence.", console_only=True)
                 self.hover_mode_active = False
-                if self.last_hovered_element: self.browser.highlight_element(self.last_hovered_element, remove=True)
+                if self.last_hovered_element: 
+                    self.browser.highlight_element(self.last_hovered_element, remove=True)
                 return "page_changed_to_video"
             try:
                 video_title_attr = video_element.get_attribute('title')
                 video_text_content = video_element.text
                 video_title = video_title_attr if video_title_attr else video_text_content
-                if not video_title: video_title = f"Video {i+1}"
+                if not video_title: 
+                    video_title = f"Video {i+1}"
                 
                 self.browser.driver.execute_script(
                     "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'nearest'});", 
@@ -117,7 +119,8 @@ class YouTubeVoiceAssistant:
                 self.tts.speak(f"Error during hover or listen for video '{video_title if 'video_title' in locals() else 'N/A'}': {e_hover_item}", console_only=True)
                 continue 
         
-        if self.last_hovered_element: self.browser.highlight_element(self.last_hovered_element, remove=True)
+        if self.last_hovered_element: 
+            self.browser.highlight_element(self.last_hovered_element, remove=True)
         self.last_hovered_element = None
         self.tts.speak("Hover sequence completed (all items viewed).", console_only=True)
         return "hover_completed_all_items"
@@ -172,7 +175,8 @@ class YouTubeVoiceAssistant:
         return False
 
     def _is_on_valid_hover_page(self):
-        if not self.browser.driver: return False
+        if not self.browser.driver: 
+            return False
         current_page_url = self.browser.get_current_url()
         return current_page_url and "watch?v=" not in current_page_url
 
