@@ -444,5 +444,535 @@
             "message": "send was sent by agent",
             "timestamp": "2025-05-23T19:45:39.191645"
         }
+    ],
+    "abhiroop": [
+        {
+            "sender": "abhiroop",
+            "message": "hatsAppAssistant > whatsapp_assistant.py > \u00a2g WhatsAppVoiceAssistant > \u00a9 extract_contact_and_message",
+            "timestamp": "2025-05-25T12:48:04.103456"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "9 class WhatsAppVoiceAssistant:",
+            "timestamp": "2025-05-25T12:48:04.109271"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "35 def handle_send_message_flow(self, command=None):",
+            "timestamp": "2025-05-25T12:48:04.109271"
+        },
+        {
+            "sender": "user",
+            "message": "< \u00a9 whatsapp",
+            "timestamp": "2025-05-25T12:48:04.115452"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "41 message = self.extract_contact_and_message(comm =",
+            "timestamp": "2025-05-25T12:48:04.121609"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "42 if not contact_name:",
+            "timestamp": "2025-05-25T12:48:04.124344"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "43 contact_name = self.speaker.listen(\"Who do you want to sey",
+            "timestamp": "2025-05-25T12:48:04.127804"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "44 if not contact_name: Or",
+            "timestamp": "2025-05-25T12:48:04.134298"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "a5 self.speaker.speak(\"No contact name provided.\") G",
+            "timestamp": "2025-05-25T12:48:04.140278"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "AG return war thunder try korbi?",
+            "timestamp": "2025-05-25T12:48:04.146562"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "7 \u00a9 Orcs2 joss am",
+            "timestamp": "2025-05-25T12:48:04.152897"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "48 if not self.wa_actions.search_whatsapp_contact(contact_name):",
+            "timestamp": "2025-05-25T12:48:04.158590"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "self.speaker.speak(f\"Problem searching for '{contact_name fe) &",
+            "timestamp": "2025-05-25T12:48:04.164528"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "8 return Accepted on anot",
+            "timestamp": "2025-05-25T12:48:04.170240"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "ROBLEMS OUTPUT DEBUG CONSOLE TERMINAL",
+            "timestamp": "2025-05-25T12:48:04.170565"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "TERMINAL",
+            "timestamp": "2025-05-25T12:48:04.176472"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "PS C:\\Users\\Debajyoti\\OneDrive\\Desktop\\Jarves full agent> cd WhatsAppAssista War thunder 20 gb but d",
+            "timestamp": "2025-05-25T12:48:04.188354"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "PS C:\\Users\\Debajyoti\\OneDrive\\Desktop\\Jarves full agent\\WhatsAppAssistant>",
+            "timestamp": "2025-05-25T12:48:04.188668"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Bot: WhatsApp Voice Assistant activated! How can I help?",
+            "timestamp": "2025-05-25T12:48:04.194953"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Listening...",
+            "timestamp": "2025-05-25T12:48:04.200462"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "You: send message Tu Abhi",
+            "timestamp": "2025-05-25T12:48:04.200462"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Bot: Okay, let's send a message. 0",
+            "timestamp": "2025-05-25T12:48:04.206368"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Bot: Opening WhatsApp...",
+            "timestamp": "2025-05-25T12:48:04.212929"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Bot: Who do you want to send a message to?",
+            "timestamp": "2025-05-25T12:48:04.212929"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Listening... @ \u00a9 @ _",
+            "timestamp": "2025-05-25T12:48:04.218502"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "You: abhiroop",
+            "timestamp": "2025-05-25T12:48:04.218502"
+        },
+        {
+            "sender": "user",
+            "message": "tu abhi",
+            "timestamp": "2025-05-25T12:48:25.823431"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "+03 pM Onek boro re game ta @ chhar ans",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "another dev... Shaala 80gb a",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Valorant namiye nicchi abar tui jodi khelish amar shaate",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "war thunder try korbi?",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "in this group",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "Ores2 am",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "cal",
+            "timestamp": "2025-05-25T13:18:47.809906"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "in this group \u2018Accepted on another device",
+            "timestamp": "2025-05-25T13:18:47.826099"
+        },
+        {
+            "sender": "user",
+            "message": "1046 AM",
+            "timestamp": "2025-05-25T13:18:47.826099"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "in this group",
+            "timestamp": "2025-05-25T13:18:47.841922"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "\u2018in this group War thunder 20 gb but different type er a",
+            "timestamp": "2025-05-25T13:18:47.841922"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "in this group",
+            "timestamp": "2025-05-25T13:18:47.857724"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "in this group",
+            "timestamp": "2025-05-25T13:18:47.857724"
+        },
+        {
+            "sender": "abhiroop",
+            "message": "in this group",
+            "timestamp": "2025-05-25T13:18:47.873688"
+        },
+        {
+            "sender": "user",
+            "message": "will you play today",
+            "timestamp": "2025-05-25T13:18:54.569774"
+        }
+    ],
+    "obero": [
+        {
+            "sender": "obero",
+            "message": "hatsAppAssistant > whatsapp_assistant.py > \u00a2g WhatsAppVoiceAssistant > \u00a9 extract_contact_and_message",
+            "timestamp": "2025-05-25T12:49:15.776558"
+        },
+        {
+            "sender": "obero",
+            "message": "9 class WhatsAppVoiceAssistant:",
+            "timestamp": "2025-05-25T12:49:15.782737"
+        },
+        {
+            "sender": "obero",
+            "message": "35 def handle_send_message_flow(self, command=None):",
+            "timestamp": "2025-05-25T12:49:15.794332"
+        },
+        {
+            "sender": "obero",
+            "message": "41 contact_name, message = self.extract_contact_and_message(command or",
+            "timestamp": "2025-05-25T12:49:15.801044"
+        },
+        {
+            "sender": "obero",
+            "message": "42. if not contact_name:",
+            "timestamp": "2025-05-25T12:49:15.807074"
+        },
+        {
+            "sender": "obero",
+            "message": "43 contact_name = self.speaker.listen(\"Who do you want to send a message to?\")",
+            "timestamp": "2025-05-25T12:49:15.818432"
+        },
+        {
+            "sender": "obero",
+            "message": "44 if not contact_name:",
+            "timestamp": "2025-05-25T12:49:15.824966"
+        },
+        {
+            "sender": "obero",
+            "message": "a5 self.speaker.speak(\"No contact name provided.\")",
+            "timestamp": "2025-05-25T12:49:15.832403"
+        },
+        {
+            "sender": "obero",
+            "message": "46 return",
+            "timestamp": "2025-05-25T12:49:15.836928"
+        },
+        {
+            "sender": "obero",
+            "message": "48, if not self.wa_actions.search_whatsapp_contact(contact_name):",
+            "timestamp": "2025-05-25T12:49:15.849027"
+        },
+        {
+            "sender": "obero",
+            "message": "49 self.speaker.speak(f\"Problem searching for '{contact_name}'.\")",
+            "timestamp": "2025-05-25T12:49:15.855193"
+        },
+        {
+            "sender": "obero",
+            "message": "58 return",
+            "timestamp": "2025-05-25T12:49:15.861163"
+        },
+        {
+            "sender": "obero",
+            "message": "ROBLEMS OUTPUT DEBUG CONSOLE TERMINAL",
+            "timestamp": "2025-05-25T12:49:15.867446"
+        },
+        {
+            "sender": "obero",
+            "message": "TERMINAL",
+            "timestamp": "2025-05-25T12:49:15.872979"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Could not find UI element: chat_input_bar.png to click.",
+            "timestamp": "2025-05-25T12:49:15.879510"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Chat input bar not found. Typing may fail.",
+            "timestamp": "2025-05-25T12:49:15.885505"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Message sent.",
+            "timestamp": "2025-05-25T12:49:15.891300"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Message logged.",
+            "timestamp": "2025-05-25T12:49:15.897126"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Ready for your next command.",
+            "timestamp": "2025-05-25T12:49:15.897126"
+        },
+        {
+            "sender": "obero",
+            "message": "Listening...",
+            "timestamp": "2025-05-25T12:49:15.903384"
+        },
+        {
+            "sender": "obero",
+            "message": "You: send message will you play today to obero",
+            "timestamp": "2025-05-25T12:49:15.909374"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Okay, let's send a message.",
+            "timestamp": "2025-05-25T12:49:15.909374"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Opening WhatsApp...",
+            "timestamp": "2025-05-25T12:49:15.915267"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Searching for obero",
+            "timestamp": "2025-05-25T12:49:15.915267"
+        },
+        {
+            "sender": "obero",
+            "message": "Bot: Could not find UI element: search_bar.png to click.",
+            "timestamp": "2025-05-25T12:49:15.921432"
+        },
+        {
+            "sender": "obero",
+            "message": "be Tt",
+            "timestamp": "2025-05-25T12:49:15.928728"
+        }
+    ],
+    "abhirup": [
+        {
+            "sender": "abhirup",
+            "message": "Yes",
+            "timestamp": "2025-05-25T12:50:15.340372"
+        },
+        {
+            "sender": "abhirup",
+            "message": "Accha 10:27 AM",
+            "timestamp": "2025-05-25T12:50:15.346692"
+        },
+        {
+            "sender": "abhirup",
+            "message": "Oi 10:42 AM",
+            "timestamp": "2025-05-25T12:50:15.352666"
+        },
+        {
+            "sender": "abhirup",
+            "message": "Onek boro re game ta ay",
+            "timestamp": "2025-05-25T12:50:15.358716"
+        },
+        {
+            "sender": "abhirup",
+            "message": "Shaala 80gb 5.43 any",
+            "timestamp": "2025-05-25T12:50:15.370601"
+        },
+        {
+            "sender": "abhirup",
+            "message": "25 Valorant iye nicchi abar tui jodi khelish haat",
+            "timestamp": "2025-05-25T12:50:15.377179"
+        },
+        {
+            "sender": "abhirup",
+            "message": "falorant namiye nicchi abar tui jodi khelish amar shaate 6.43 ayy",
+            "timestamp": "2025-05-25T12:50:15.384359"
+        },
+        {
+            "sender": "abhirup",
+            "message": "war thunder try 5:50. aq",
+            "timestamp": "2025-05-25T12:50:15.389636"
+        },
+        {
+            "sender": "abhirup",
+            "message": "in this group",
+            "timestamp": "2025-05-25T12:50:15.407669"
+        },
+        {
+            "sender": "abhirup",
+            "message": "& Voice call",
+            "timestamp": "2025-05-25T12:50:15.419352"
+        },
+        {
+            "sender": "abhirup",
+            "message": "n Bengal are als... Accepted on another device",
+            "timestamp": "2025-05-25T12:50:15.438171"
+        },
+        {
+            "sender": "abhirup",
+            "message": "n Bengal are als...",
+            "timestamp": "2025-05-25T12:50:15.444213"
+        },
+        {
+            "sender": "abhirup",
+            "message": "56 11:03 AM",
+            "timestamp": "2025-05-25T12:50:15.455561"
+        },
+        {
+            "sender": "abhirup",
+            "message": "n Bengal are als... War thunder 20 gb but different type er a",
+            "timestamp": "2025-05-25T12:50:15.461564"
+        },
+        {
+            "sender": "abhirup",
+            "message": "n Bengal are als...",
+            "timestamp": "2025-05-25T12:50:15.468185"
+        },
+        {
+            "sender": "user",
+            "message": "tu abhiroop",
+            "timestamp": "2025-05-25T12:50:23.279644"
+        }
+    ],
+    "oberoi": [
+        {
+            "sender": "oberoi",
+            "message": "4/29/2025",
+            "timestamp": "2025-05-25T12:51:20.031739"
+        },
+        {
+            "sender": "user",
+            "message": "a &h",
+            "timestamp": "2025-05-25T12:51:20.031739"
+        },
+        {
+            "sender": "oberoi",
+            "message": "4/27/2025",
+            "timestamp": "2025-05-25T12:51:20.031739"
+        },
+        {
+            "sender": "user",
+            "message": "Start call New call link Call a number",
+            "timestamp": "2025-05-25T12:51:20.037701"
+        },
+        {
+            "sender": "oberoi",
+            "message": "4/26/2025",
+            "timestamp": "2025-05-25T12:51:20.037701"
+        },
+        {
+            "sender": "oberoi",
+            "message": "4/22/2025",
+            "timestamp": "2025-05-25T12:51:20.037701"
+        },
+        {
+            "sender": "oberoi",
+            "message": "4/20/2025",
+            "timestamp": "2025-05-25T12:51:20.043796"
+        }
+    ],
+    "manav": [
+        {
+            "sender": "manav",
+            "message": "ay last seen today at",
+            "timestamp": "2025-05-25T13:17:42.656472"
+        },
+        {
+            "sender": "manav",
+            "message": "Team name kidebo? 4.57 py",
+            "timestamp": "2025-05-25T13:17:42.672149"
+        },
+        {
+            "sender": "manav",
+            "message": "start\u201d",
+            "timestamp": "2025-05-25T13:17:42.672149"
+        },
+        {
+            "sender": "manav",
+            "message": "ab... 4/13/2025",
+            "timestamp": "2025-05-25T13:17:42.672149"
+        },
+        {
+            "sender": "manav",
+            "message": "3/9/2025",
+            "timestamp": "2025-05-25T13:17:42.672149"
+        },
+        {
+            "sender": "manav",
+            "message": "Birthday bhi...",
+            "timestamp": "2025-05-25T13:17:42.687861"
+        },
+        {
+            "sender": "user",
+            "message": "Hai",
+            "timestamp": "2025-05-25T13:17:42.687861"
+        },
+        {
+            "sender": "manav",
+            "message": "oi mail gache dekh 3.59 py,",
+            "timestamp": "2025-05-25T13:17:42.687861"
+        },
+        {
+            "sender": "manav",
+            "message": "abhirup ke bole de or kache 0 mail jabe 5.29 py",
+            "timestamp": "2025-05-25T13:17:42.687861"
+        },
+        {
+            "sender": "manav",
+            "message": "ha (2:39 PM",
+            "timestamp": "2025-05-25T13:17:42.703916"
+        },
+        {
+            "sender": "manav",
+            "message": "Yesterday Yesterday",
+            "timestamp": "2025-05-25T13:17:42.703916"
+        },
+        {
+            "sender": "manav",
+            "message": "5/15/2025,",
+            "timestamp": "2025-05-25T13:17:42.719714"
+        },
+        {
+            "sender": "user",
+            "message": "will you play today",
+            "timestamp": "2025-05-25T13:17:49.697367"
+        }
     ]
 }
