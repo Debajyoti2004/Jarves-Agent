@@ -67,6 +67,7 @@ try:
         custom_code_agent,
         open_code_input_portal
     )
+    from WhatsAppAssistant import WhatsAppActions,group_actions_by_contact
     try:
         from EmailAccessAgent import (
             get_unread_emails, draft_reply_with_llm, send_email,
@@ -158,6 +159,14 @@ class ResumeAnalyzerInput(BaseModel):
     job_description_end_keyword: str = Field(default="END_JD", description="Keyword to end job description input.")
     resume_pdf_path: Optional[str] = Field(default=None, description="Optional path to resume PDF. Uses env var if None.")
 
+class WhatsAppActionInput(BaseModel):
+    type: str = Field(description="Message type: 'chat' for text, 'voice' for audio.")
+    message: Optional[str] = Field(default=None, description="Message content. For 'voice' type, this is spoken by the assistant. If null for 'voice', user must speak.")
+    contact_name: str = Field(description="The recipient's contact name as saved in WhatsApp.")
+    duration: Optional[int] = Field(default=None, description="Duration in seconds (1-120) for user-spoken voice messages if 'type' is 'voice' and 'message' is null. Not used for TTS.")
+
+class WhatsAppToolInput(BaseModel):
+    message_list: List[WhatsAppActionInput] = Field(description="A list of WhatsApp messages to send, each specifying type, content, contact, and optional duration for voice.")
 
 @tool(args_schema=OpenAppInput)
 def open_app_tool(app_name: str) -> str:
@@ -932,3 +941,143 @@ def resume_analyzer(
     else:
         speaker.speak("Resume analysis complete. I have the results.")
         return json.dumps({"status": "success", "analysis": analysis_result}, indent=2)
+    
+@tool(args_schema=WhatsAppToolInput)
+def whatsapp_assistant_tool(message_list:List[Dict[str,Any]])->List[str]:
+    """
+        📱 Sends a series of messages (text or voice) to specified contacts on WhatsApp.
+
+        This tool processes a list of actions, groups them by contact,
+        and then efficiently sends the messages. For each contact, it will:
+        1. Search for the contact in WhatsApp.
+        2. Select the contact to open the chat.
+        3. Scan previous messages (once per contact session).
+        4. Send all queued messages (chat or voice) for that contact.
+
+        Voice messages can either be spoken by the assistant (if 'message' content is provided)
+        or recorded by the user (if 'message' is null and 'duration' is specified).
+        Returns a list of status strings for each attempted action.
+    """
+    logger.info("🛠️📱 WhatsApp Messaging Tool Activated.")
+    speaker.speak("🚀 Activating WhatsApp Messaging Tool...")
+    
+    results: List[str] = []
+    
+    actions_to_process: List[Dict[str, Any]]
+    if isinstance(message_list, str): 
+        try:
+            parsed_json = json.loads(message_list)
+            actions_to_process = parsed_json.get("message_list", [])
+            if not isinstance(actions_to_process, list): 
+                raise ValueError("Parsed 'message_list' is not a list.")
+        except (json.JSONDecodeError, ValueError) as e:
+            err_msg = f"Error: Invalid JSON or structure for message_list: {e}"
+            logger.error(err_msg)
+            speaker.speak(f"⚠️ {err_msg}")
+            return [err_msg] 
+    elif isinstance(message_list, list):
+        actions_to_process = message_list
+    else:
+        err_msg = "Error: message_list_input must be a JSON string or a list of dictionaries."
+        logger.error(err_msg)
+        speaker.speak(f"⚠️ {err_msg}")
+        return [err_msg]
+        
+    if not actions_to_process:
+        no_actions_msg = "🤔 No actions to process after parsing input."
+        logger.info(no_actions_msg)
+        speaker.speak(no_actions_msg)
+        return [no_actions_msg]
+    
+    wa_actions = WhatsAppActions(whatsapp_path=os.getenv("WHATSAPP_EXE_PATH"),speaker=speaker,google_api_key = os.getenv("GOOGLE_API_KEY"))
+    
+    if not wa_actions.open_whatsapp_window():
+        critical_error_msg = "❌ Critical Error: Could not open WhatsApp. Aborting all actions."
+        speaker.speak(critical_error_msg)
+        for i in range(len(actions_to_process)): 
+            results.append(f"Action {i+1}: Skipped - WhatsApp failed to open.")
+        return results
+
+    group_contact = group_actions_by_contact(actions=actions_to_process)
+
+    for contact_name, actions_in_group in group_contact.items():
+        speaker.speak(f"👤 Processing messages for {contact_name}...")
+        
+        if not wa_actions.search_whatsapp_contact(contact_name=contact_name):
+            search_fail_msg = f"⚠️ Boss! I didn't find {contact_name} in your WhatsApp. Please check the name or save it first."
+            speaker.speak(search_fail_msg)
+            for _ in actions_in_group: 
+                results.append(f"Action for {contact_name}: Skipped - {search_fail_msg}")
+            continue 
+
+        if not wa_actions.select_top_searched_contact():
+            select_fail_msg = f"⚠️ Could not open chat with {contact_name} after searching."
+            speaker.speak(select_fail_msg)
+            for _ in actions_in_group:
+                results.append(f"Action for {contact_name}: Skipped - {select_fail_msg}")
+            continue
+            
+        wa_actions.scan_previous_messages(current_contact_name=contact_name)
+
+        for message_dict in actions_in_group:
+            action_type = message_dict.get("type")
+            msg_content = message_dict.get("message")
+            duration = message_dict.get("duration")
+            
+            action_description = f"Action for {contact_name} (Type: {action_type}, Msg: '{str(msg_content)[:30]}...')"
+
+            if action_type == "chat":
+                if msg_content is None:
+                    chat_error_msg = f"{action_description}: ❌ Failed - Message content is missing for chat."
+                    speaker.speak(chat_error_msg)
+                    results.append(chat_error_msg)
+                    continue
+                speaker.speak(f"💬 Sending text to {contact_name}: '{msg_content}'")
+                success = wa_actions.send_text_in_current_chat(message_text=msg_content, contact_name_for_logging=contact_name)
+                if success:
+                    results.append(f"{action_description}: ✅ Sent successfully.")
+                    speaker.speak(f"✅ Text to {contact_name} sent.")
+                else:
+                    failure_msg = f"Failed to send chat message '{msg_content}' to {contact_name}"
+                    speaker.speak(f"❌ {failure_msg}")
+                    results.append(f"{action_description}: ❌ {failure_msg}")
+            
+            elif action_type == "voice":
+                if not msg_content and not duration:
+                    voice_error_msg = f"{action_description}: ❌ Failed - Voice message needs either TTS content or a duration for user speech."
+                    speaker.speak(voice_error_msg)
+                    results.append(voice_error_msg)
+                    continue
+                
+                if msg_content:
+                    speaker.speak(f"🗣️ Sending assistant voice to {contact_name}: '{msg_content}'")
+                elif duration:
+                     speaker.speak(f"🎤 Recording your voice for {duration}s to {contact_name}. Speak now!")
+
+                success = wa_actions.send_voice_in_current_chat(
+                    contact_name_for_logging=contact_name,
+                    tts_message_content=msg_content,
+                    user_speech_duration_secs=duration
+                )
+                if success:
+                    results.append(f"{action_description}: ✅ Voice message process initiated.")
+                    speaker.speak(f"✅ Voice message to {contact_name} initiated.")
+                else:
+                    failure_msg = f"Failed to send voice message '{msg_content if msg_content else '[User Speech]'}' to {contact_name}"
+                    speaker.speak(f"❌ {failure_msg}")
+                    results.append(f"{action_description}: ❌ {failure_msg}")
+            else:
+                unknown_type_msg = f"{action_description}: ⚠️ Unknown action type '{action_type}'."
+                speaker.speak(unknown_type_msg)
+                results.append(unknown_type_msg)
+                
+    speaker.speak("🏁 All WhatsApp messaging tasks processed.")
+    return results
+
+
+        
+
+
+    
+
+    

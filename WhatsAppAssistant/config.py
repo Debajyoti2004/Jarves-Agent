@@ -10,6 +10,8 @@ NEW_CHAT_BUTTON_IMG = os.path.join(IMAGE_PATH_BASE, "new_chat_button.png")
 SEARCH_BAR_IMG = os.path.join(IMAGE_PATH_BASE, "search_bar.png")
 CHAT_INPUT_BAR_IMG = os.path.join(IMAGE_PATH_BASE, "chat_input_bar.png")
 SEND_BUTTON_IMG = os.path.join(IMAGE_PATH_BASE, "send_button.png") 
+MIC_BUTTON_IMG=os.path.join(IMAGE_PATH_BASE,"mic_button.png")
+VOICE_SEND_BUTTON_IMG=os.path.join(IMAGE_PATH_BASE,"voice_sent_button.png")
 
 CONTACT_LIST_REGION = (50, 180, 350, 700)
 CHAT_HISTORY_SNIPPET_REGION = (370, 100, 1160, 840) 
